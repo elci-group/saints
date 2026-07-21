@@ -106,6 +106,21 @@ aviIngestFlightOptions([{
 }]);
 ```
 
+The PATH world map groups the active player pool by origin airport and overlays category routes for Senior and the U20/U21 pathway. For each category, `PathTracker.resolveCategoryDestinations()` chooses the earliest future authorised team-schedule record: a Saint Vincent home assembly or an away fixture. When neither is dated, the map clearly falls back to SVD. Category schedules can be supplied without changing the UI:
+
+```js
+aviIngestTeamSchedules([{
+  categoryId: "senior",
+  kind: "away",
+  date: "2026-10-01",
+  destinationAirport: "KIN",
+  label: "Authorised fixture label",
+  source: "federation schedule"
+}]);
+```
+
+The checked-in configuration intentionally contains no invented future fixtures. Competition windows can guide monitoring, but only team-specific authorised dates determine the live destination.
+
 Amadeus is treated as a credentialled commercial-itinerary adapter. OpenSky is retained for observed-flight validation only, because it does not provide commercial schedules. The local connected-airport graph remains available as a clearly marked estimate when neither source has a matching record.
 
 ## Keeper Lab

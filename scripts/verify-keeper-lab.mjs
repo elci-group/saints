@@ -21,6 +21,11 @@ async function verifyViewport(name, viewport) {
   assert.equal(response?.status(), 200, `${name}: application returned ${response?.status()}`);
   await page.waitForSelector('[data-view="keepers"]', { state: "attached" });
   await page.waitForFunction(() => document.querySelector("#dbName")?.textContent === "AVI model", null, { timeout: 10000 });
+  await page.locator('[data-view-target="path"]').click();
+  await page.waitForFunction(() => document.querySelectorAll("#pathWorldMap .path-map-route").length > 0);
+  assert.equal(await page.locator("#pathMapLegend .path-map-category").count(), 2, `${name}: category route legend is incomplete`);
+  assert.match(await page.locator("#pathMapScope").textContent(), /origin airport/i);
+  assert.notEqual(await page.locator("#pathWorldMap").getAttribute("viewBox"), "0 0 1000 500", `${name}: map did not fit to player-pool scope`);
   await page.locator('[data-view-target="keepers"]').click();
   await page.waitForTimeout(500);
   assert.equal(await page.locator('[data-view="keepers"]').getAttribute("class"), "view active", `${name}: Keeper Lab did not activate: ${errors.join(" | ")}`);

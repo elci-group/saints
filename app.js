@@ -1,5 +1,6 @@
 import { ContextBroker } from "./context-engine.js";
 import { PathTracker } from "./path-engine.js";
+import { buildPathMapModel, createPathMapSvg } from "./path-map.js";
 import { KeeperFinalThirdScene } from "./keeper-scene.js";
 import { BroadcastTracker, pitchLandmarks } from "./tracking-engine.js";
 import {
@@ -230,6 +231,9 @@ const els = {
   historyLast: document.querySelector("#historyLast"),
   historyWeather: document.querySelector("#historyWeather"),
   historyTable: document.querySelector("#historyTable"),
+  pathWorldMap: document.querySelector("#pathWorldMap"),
+  pathMapLegend: document.querySelector("#pathMapLegend"),
+  pathMapScope: document.querySelector("#pathMapScope"),
   keeperSelect: document.querySelector("#keeperSelect"),
   keeperLayer: document.querySelector("#keeperLayer"),
   keeperEvidenceState: document.querySelector("#keeperEvidenceState"),
@@ -366,6 +370,11 @@ async function init() {
     state.pathTracker.ingestScheduleRecords(records);
     renderPath();
     return records.length;
+  };
+  window.aviIngestTeamSchedules = (records) => {
+    const count = state.pathTracker.ingestTeamScheduleRecords(records);
+    renderPath();
+    return count;
   };
   window.aviIngestGoalkeeperEvents = ingestGoalkeeperEvents;
   window.aviRegisterGoblinAdapter = (adapter) => {
@@ -691,8 +700,23 @@ function renderPath() {
       renderPath();
     });
   });
+  renderPathMap(entry);
   renderPathDetail();
   renderPathSources();
+}
+
+function renderPathMap(entry) {
+  const categories = state.pathTracker.resolveCategoryDestinations();
+  const model = buildPathMapModel(state.pathTracker, entry.players, categories);
+  els.pathWorldMap.setAttribute("viewBox", model.viewBox);
+  els.pathWorldMap.innerHTML = createPathMapSvg(model);
+  els.pathMapLegend.innerHTML = categories.map((category) => {
+    const airport = state.pathTracker.airports.get(category.destinationAirport);
+    const timing = category.date ? formatFixtureDate(category.date) : "No dated fixture loaded";
+    const type = category.destinationType === "away-fixture" ? "Next away" : "St Vincent";
+    return `<div class="path-map-category" style="--route:${escapeHtml(category.color)}"><span></span><strong>${escapeHtml(category.label)}</strong><small>${type} · ${escapeHtml(airport?.code ?? category.destinationAirport)} · ${escapeHtml(timing)}</small></div>`;
+  }).join("");
+  els.pathMapScope.textContent = `${model.playerCount} players across ${model.origins.length} origin airport${model.origins.length === 1 ? "" : "s"}; map fitted to the active ${entry.country} pool and category destinations.`;
 }
 
 function renderPathDetail() {

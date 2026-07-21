@@ -55,6 +55,13 @@ require_regex = ["PathTracker", "calculatePlayer", "ingestScheduleRecords", "sho
 forbid_regex = ["TODO", "FIXME", "console\\.log"]
 
 [[file]]
+path = "path-map.js"
+required = true
+min_size_bytes = 5000
+require_regex = ["buildPathMapModel", "createPathMapSvg", "path-map-route", "fitViewBox", "category"]
+forbid_regex = ["TODO", "FIXME", "console\\.log"]
+
+[[file]]
 path = "data/path-config.json"
 required = true
 min_size_bytes = 2000
@@ -206,6 +213,13 @@ cmd = ["node", "path-engine.test.mjs"]
 expect_exit = 0
 timeout_secs = 10
 stdout_contains = ["PATH route and schedule tests passed"]
+
+[[command]]
+name = "PATH world map tests"
+cmd = ["node", "path-map.test.mjs"]
+expect_exit = 0
+timeout_secs = 10
+stdout_contains = ["PATH world map tests passed"]
 
 [[command]]
 name = "SVG history ingestion tests"
