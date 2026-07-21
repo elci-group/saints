@@ -45,11 +45,12 @@ function suggestionSignature(suggestion) {
 function normalizeItem(item, source) {
   const sourceType = cleanText(item?.sourceType ?? source.sourceType ?? "existing provenance").toLowerCase();
   const suggestion = item?.suggestion && typeof item.suggestion === "object" ? { ...item.suggestion } : null;
+  const maximumTrust = SOURCE_TRUST[sourceType];
   return {
     sourceId: cleanText(source.id) ?? "unnamed-source",
     sourceLabel: cleanText(source.label) ?? cleanText(source.id) ?? "Unnamed source",
     sourceType,
-    trust: Math.max(0, Math.min(1, Number(item?.trust ?? source.trust ?? SOURCE_TRUST[sourceType] ?? 0.5))),
+    trust: Math.max(0, Math.min(maximumTrust, Number(item?.trust ?? source.trust ?? maximumTrust))),
     evidenceUrl: cleanText(item?.evidenceUrl),
     summary: cleanText(item?.summary),
     clip: item?.clip ?? null,
@@ -99,6 +100,8 @@ export async function runCompoundResearch(packet, { sources = [], now = () => ne
   const plan = createCompoundResearchPlan(packet);
   const settled = await Promise.allSettled(sources.map(async (source) => {
     if (!source?.id || typeof source.collect !== "function") throw new Error("Research sources require id and collect");
+    const sourceType = cleanText(source.sourceType ?? "existing provenance").toLowerCase();
+    if (!(sourceType in SOURCE_TRUST)) throw new Error(`Research source type is not authorised: ${sourceType}`);
     const result = await source.collect({ packet, plan });
     return { source, result: result ?? {} };
   }));
@@ -125,13 +128,15 @@ export async function runCompoundResearch(packet, { sources = [], now = () => ne
     : []);
   const clips = uniqueBy(settled.flatMap((run) => run.status === "fulfilled" ? (run.value.result.clips ?? []) : []),
     (clip) => clip.videoId ?? clip.url);
-  const signatureCounts = new Map();
+  const signatureSources = new Map();
   evidence.forEach((item) => {
     const signature = suggestionSignature(item.suggestion);
-    if (signature) signatureCounts.set(signature, (signatureCounts.get(signature) ?? 0) + 1);
+    if (!signature) return;
+    if (!signatureSources.has(signature)) signatureSources.set(signature, new Set());
+    signatureSources.get(signature).add(item.sourceId);
   });
   const candidates = evidence.filter((item) => item.suggestion).map((item) => {
-    const corroboration = signatureCounts.get(suggestionSignature(item.suggestion)) ?? 1;
+    const corroboration = signatureSources.get(suggestionSignature(item.suggestion))?.size ?? 1;
     return { ...item, corroboration, confidence: scoreCandidate(item, corroboration) };
   }).sort((a, b) => b.confidence - a.confidence);
   const top = candidates[0] ?? null;

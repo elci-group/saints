@@ -139,8 +139,9 @@ async function verifyViewport(name, viewport) {
     await page.waitForFunction(() => document.querySelector("#trackingStatus").textContent.includes("GROQ_API_KEY"));
 
     await page.locator("#runGoblin").click();
-    assert.match(await page.locator("#goblinStatus").textContent(), /queued locally/i);
-    assert.ok(await page.evaluate(() => JSON.parse(localStorage.getItem("avi-goblin-ingress-queue") ?? "[]").length > 0));
+    assert.match(await page.locator("#goblinStatus").textContent(), /compound research completed/i);
+    assert.equal(await page.locator("#goblinResearchTrace li").count(), 5);
+    assert.match(await page.locator("#goblinResearchSummary").textContent(), /sources/i);
     await page.locator("#wizardClipUrl").fill("https://www.youtube.com/watch?v=abc123");
     await page.evaluate(() => window.aviRegisterVideoModelAdapter(async () => ({
       minute: 54,

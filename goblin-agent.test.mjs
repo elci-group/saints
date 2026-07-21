@@ -35,14 +35,16 @@ const result = await runCompoundResearch(packet, {
         clips: [{ videoId: "clip-1", url: "https://www.youtube.com/watch?v=clip-1" }, { videoId: "clip-1", url: "https://www.youtube.com/watch?v=clip-1" }]
       })
     },
-    { id: "unavailable", collect: async () => { throw new Error("adapter offline"); } }
+    { id: "unavailable", collect: async () => { throw new Error("adapter offline"); } },
+    { id: "unsafe-web", sourceType: "unreviewed web scrape", collect: async () => ({ items: [{ suggestion }] }) }
   ]
 });
 
 assert.equal(result.status, "review_required");
 assert.equal(result.provisional, true);
 assert.equal(result.observed, false);
-assert.equal(result.sourceRuns.filter((source) => source.status === "failed").length, 1);
+assert.equal(result.sourceRuns.filter((source) => source.status === "failed").length, 2);
+assert.match(result.sourceRuns.find((source) => source.id === "unsafe-web").error, /not authorised/);
 assert.equal(result.clips.length, 1);
 assert.equal(result.candidates[0].corroboration, 2);
 assert.ok(result.confidence > 0.8);
