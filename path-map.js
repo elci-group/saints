@@ -91,13 +91,16 @@ export function createPathMapSvg(model) {
   const grid = [30, 60, 90, 120, 150, 210, 240, 270, 300, 330].map((x) => `<line class="path-map-gridline" x1="${x / 360 * MAP_WIDTH}" y1="0" x2="${x / 360 * MAP_WIDTH}" y2="500"/>`)
     .join("") + [60, 120, 180, 240, 300, 360, 420].map((y) => `<line class="path-map-gridline" x1="0" y1="${y}" x2="1000" y2="${y}"/>`).join("");
   const routes = model.routes.map((route) => `<path class="path-map-route" data-category="${xml(route.category.categoryId)}" d="${curvePath(route)}" style="--route:${xml(route.category.color)};--route-width:${Math.min(5, 1.5 + Math.sqrt(route.playerCount)).toFixed(1)}"><title>${xml(`${route.category.label}: ${route.playerCount} player${route.playerCount === 1 ? "" : "s"} · ${route.origin.code} to ${route.destination?.code ?? route.category.destinationAirport}`)}</title></path>`).join("");
-  const origins = model.origins.map(({ airport, players }) => { const point = project(airport); return `<g class="path-map-origin" transform="translate(${point.x.toFixed(1)} ${point.y.toFixed(1)})"><circle r="${Math.min(9, 4 + Math.sqrt(players.length)).toFixed(1)}"/><text x="8" y="-7">${xml(airport.code)}</text><title>${xml(`${airport.name}: ${players.length} player${players.length === 1 ? "" : "s"}`)}</title></g>`; }).join("");
-  const destinations = (model.categories ?? []).map((category, index) => {
+  const destinationCodes = new Set((model.categories ?? []).map((category) => category.destinationAirport));
+  const origins = model.origins.map(({ airport, players }) => { const point = project(airport); return `<g class="path-map-origin" transform="translate(${point.x.toFixed(1)} ${point.y.toFixed(1)})"><circle r="${Math.min(9, 4 + Math.sqrt(players.length)).toFixed(1)}"/>${destinationCodes.has(airport.code) ? "" : `<text x="8" y="-7">${xml(airport.code)}</text>`}<title>${xml(`${airport.name}: ${players.length} player${players.length === 1 ? "" : "s"}`)}</title></g>`; }).join("");
+  const destinations = (model.categories ?? []).map((category) => {
     const airport = model.routes.find((route) => route.category.categoryId === category.categoryId)?.destination;
     if (!airport) return "";
     const point = project(airport);
-    const offset = index * 8;
-    return `<g class="path-map-destination" transform="translate(${(point.x + offset).toFixed(1)} ${(point.y + offset).toFixed(1)})" style="--route:${xml(category.color)}"><rect x="-6" y="-6" width="12" height="12" transform="rotate(45)"/><text x="10" y="5">${xml(category.label)} · ${xml(airport.code)}</text></g>`;
+    const siblings = model.categories.filter((candidate) => candidate.destinationAirport === category.destinationAirport);
+    const siblingIndex = siblings.findIndex((candidate) => candidate.categoryId === category.categoryId);
+    const offsetY = (siblingIndex - (siblings.length - 1) / 2) * 22;
+    return `<g class="path-map-destination" transform="translate(${point.x.toFixed(1)} ${(point.y + offsetY).toFixed(1)})" style="--route:${xml(category.color)}"><rect x="-6" y="-6" width="12" height="12" transform="rotate(45)"/><text x="12" y="4">${xml(category.label)} · ${xml(airport.code)}</text></g>`;
   }).join("");
   return `${grid}${land}${routes}${origins}${destinations}`;
 }
