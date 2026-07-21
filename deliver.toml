@@ -62,6 +62,13 @@ require_regex = ["buildPathMapModel", "createPathMapSvg", "path-map-route", "fit
 forbid_regex = ["TODO", "FIXME", "console\\.log"]
 
 [[file]]
+path = "path-map.css"
+required = true
+min_size_bytes = 1000
+require_regex = ["path-world-map", "path-map-route", "path-map-category"]
+forbid_regex = ["TODO", "FIXME"]
+
+[[file]]
 path = "data/path-config.json"
 required = true
 min_size_bytes = 2000

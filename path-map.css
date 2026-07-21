@@ -1,0 +1,21 @@
+.path-map-panel { overflow: hidden; }
+.path-map-legend { display: flex; gap: 10px; flex-wrap: wrap; margin: 14px 0 12px; }
+.path-map-category { display: grid; grid-template-columns: 10px auto; column-gap: 8px; align-items: center; padding: 8px 10px; border: 1px solid var(--line); background: #f8faf8; }
+.path-map-category > span { grid-row: 1 / 3; width: 9px; height: 28px; background: var(--route); }
+.path-map-category strong { font-size: .72rem; }
+.path-map-category small { color: var(--muted); font-size: .62rem; }
+.path-world-map-shell { min-height: 300px; border: 1px solid #bfd0c8; background: linear-gradient(180deg, #eaf5f3 0%, #f7fbfa 100%); overflow: hidden; }
+.path-world-map { display: block; width: 100%; height: auto; min-height: 300px; max-height: 520px; }
+.path-map-land { fill: #d9e4de; stroke: #b8cbc1; stroke-width: 1; vector-effect: non-scaling-stroke; }
+.path-map-gridline { stroke: #cdded7; stroke-width: .7; stroke-dasharray: 3 6; vector-effect: non-scaling-stroke; }
+.path-map-route { fill: none; stroke: var(--route); stroke-width: var(--route-width); stroke-linecap: round; opacity: .72; vector-effect: non-scaling-stroke; }
+.path-map-origin circle { fill: #102b22; stroke: #fff; stroke-width: 1.5; vector-effect: non-scaling-stroke; }
+.path-map-origin text,
+.path-map-destination text { fill: #17372c; font-size: 10px; font-weight: 900; paint-order: stroke; stroke: #f7fbfa; stroke-width: 3px; stroke-linejoin: round; }
+.path-map-destination rect { fill: var(--route); stroke: #fff; stroke-width: 1.5; vector-effect: non-scaling-stroke; }
+
+@media (max-width: 720px) {
+  .path-world-map-shell,
+  .path-world-map { min-height: 220px; }
+  .path-map-category { width: 100%; }
+}
