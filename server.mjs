@@ -3,6 +3,7 @@ import { stat } from "node:fs/promises";
 import { createServer } from "node:http";
 import { extname, normalize, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+import { createExistingEvidenceSource, runCompoundResearch } from "./goblin-agent.js";
 
 const DEFAULT_ROOT = fileURLToPath(new URL(".", import.meta.url));
 const MAX_AUDIO_BYTES = 25 * 1024 * 1024;
@@ -200,6 +201,38 @@ export async function searchConcacafYoutube(query, {
   };
 }
 
+export async function researchGoblinPacket(packet, {
+  env = process.env,
+  fetchImpl = fetch,
+  channelCache = new Map(),
+  goblinSources = []
+} = {}) {
+  const officialVideoSource = {
+    id: "concacaf-youtube",
+    label: "Concacaf official YouTube",
+    sourceType: "YouTube Data API metadata",
+    trust: 0.68,
+    async collect({ packet: collationPacket }) {
+      const result = await searchConcacafYoutube(collationPacket.gap.query, {
+        apiKey: env.YOUTUBE_DATA_API_KEY,
+        fetchImpl,
+        channelCache
+      });
+      return {
+        clips: result.clips,
+        items: result.clips.map((clip) => ({
+          evidenceUrl: clip.url,
+          clip,
+          summary: `Official channel metadata candidate: ${clip.title}`
+        }))
+      };
+    }
+  };
+  return runCompoundResearch(packet, {
+    sources: [createExistingEvidenceSource(), officialVideoSource, ...goblinSources]
+  });
+}
+
 async function serveStatic(request, response, root) {
   const url = new URL(request.url, "http://localhost");
   const pathname = decodeURIComponent(url.pathname === "/" ? "/index.html" : url.pathname);
@@ -217,7 +250,7 @@ async function serveStatic(request, response, root) {
   createReadStream(filePath).pipe(response);
 }
 
-export function createAviServer({ root = DEFAULT_ROOT, env = process.env, fetchImpl = fetch } = {}) {
+export function createAviServer({ root = DEFAULT_ROOT, env = process.env, fetchImpl = fetch, goblinSources = [] } = {}) {
   const channelCache = new Map();
   return createServer(async (request, response) => {
     try {
@@ -232,9 +265,15 @@ export function createAviServer({ root = DEFAULT_ROOT, env = process.env, fetchI
           ok: true,
           services: { groq: Boolean(env.GROQ_API_KEY), youtube: Boolean(env.YOUTUBE_DATA_API_KEY) },
           models: { stt: env.GROQ_STT_MODEL ?? "whisper-large-v3-turbo", inference: env.GROQ_INFERENCE_MODEL ?? "openai/gpt-oss-20b" },
+          agents: { goblin: { mode: "compound-research", stages: 5, analystReviewRequired: true } },
           evidenceSources: [{ id: "concacaf-youtube", handle: "@concacaf", url: CONCACAF_CHANNEL_URL }]
         });
         return;
+      }
+      if (request.method === "POST" && url.pathname === "/api/goblin/research") {
+        const packet = JSON.parse((await readBody(request, 1024 * 1024)).toString("utf8"));
+        const result = await researchGoblinPacket(packet, { env, fetchImpl, channelCache, goblinSources });
+        return json(response, 200, result);
       }
       if (request.method === "GET" && url.pathname === "/api/youtube/search") {
         const query = url.searchParams.get("q")?.trim();

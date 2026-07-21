@@ -120,6 +120,10 @@ aviRegisterGoblinAdapter(async (packet) => {
 });
 ```
 
+Goblin now defaults to the server-side compound research agent at `POST /api/goblin/research`. Each run scopes the gap, fans out across authorised source adapters, deduplicates evidence and clips, scores corroborated structured candidates, and returns a visible trace for analyst review. Existing provenance and the official Concacaf YouTube adapter are built in; licensed reports or event feeds can be injected through `createAviServer({ goblinSources })`. Research output is always provisional and never becomes observed evidence until the analyst confirms it in the manual intelligence wizard.
+
+Kaptaind monitors this project with cluster-only staging, required `npm test` qualification, local semantic versioning and push disabled. Runtime state is written under `.kaptaind/` and excluded from Git.
+
 The clip matcher uses the official YouTube Data API. Concacaf searches use the server-side key; broader searches can use a key held only in the current browser form. Selecting a result links the clip to the manual intelligence wizard. A video-in model can suggest minute, situation, shot origin and goal zone through a registered adapter, but its output is not marked observed until the analyst confirms the action:
 
 ```js

@@ -32,7 +32,10 @@ const gaps = buildKeeperEvidenceGaps(fixtures, "Test Keeper");
 assert.equal(gaps.length, 2);
 assert.equal(gaps[0].type, "event");
 assert.match(gaps[0].query, /Grenada 2025 highlights/);
-assert.equal(buildGoblinCollationPacket(gaps[0]).constraints.neverInferAsObserved, true);
+const collationPacket = buildGoblinCollationPacket(gaps[0]);
+assert.equal(collationPacket.constraints.neverInferAsObserved, true);
+assert.equal(collationPacket.schemaVersion, 2);
+assert.deepEqual(collationPacket.orchestration.stages, ["scope", "discover", "corroborate", "synthesise", "review"]);
 
 assert.equal(validVideoUrl("https://www.youtube.com/watch?v=abc123"), true);
 assert.equal(validVideoUrl("https://youtu.be/abc123"), true);

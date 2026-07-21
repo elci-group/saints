@@ -83,6 +83,13 @@ require_regex = ["buildKeeperEvidenceGaps", "buildGoblinCollationPacket", "searc
 forbid_regex = ["TODO", "FIXME", "console\\.log"]
 
 [[file]]
+path = "goblin-agent.js"
+required = true
+min_size_bytes = 5000
+require_regex = ["runCompoundResearch", "createCompoundResearchPlan", "createExistingEvidenceSource", "corroborate", "review_required", "analyst"]
+forbid_regex = ["TODO", "FIXME", "console\\.log"]
+
+[[file]]
 path = "tracking-engine.js"
 required = true
 min_size_bytes = 7000
@@ -164,6 +171,13 @@ cmd = ["node", "keeper-lab.test.mjs"]
 expect_exit = 0
 timeout_secs = 10
 stdout_contains = ["Keeper Lab scene and ingress tests passed"]
+
+[[command]]
+name = "Goblin compound research tests"
+cmd = ["node", "goblin-agent.test.mjs"]
+expect_exit = 0
+timeout_secs = 10
+stdout_contains = ["Goblin compound research agent tests passed"]
 
 [[command]]
 name = "Broadcast tracking tests"

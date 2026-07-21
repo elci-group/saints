@@ -32,6 +32,7 @@ const state = {
   selectedGapId: null,
   clipMatches: [],
   goblinAdapter: null,
+  goblinResearch: null,
   videoModelAdapter: null,
   broadcastTracker: new BroadcastTracker(),
   broadcastTrackingAdapter: null,
@@ -252,6 +253,8 @@ const els = {
   gapList: document.querySelector("#gapList"),
   runGoblin: document.querySelector("#runGoblin"),
   goblinStatus: document.querySelector("#goblinStatus"),
+  goblinResearchSummary: document.querySelector("#goblinResearchSummary"),
+  goblinResearchTrace: document.querySelector("#goblinResearchTrace"),
   clipMatchCount: document.querySelector("#clipMatchCount"),
   clipSource: document.querySelector("#clipSource"),
   clipSearch: document.querySelector("#clipSearch"),
@@ -886,24 +889,43 @@ async function runGoblinCollation() {
   const packet = buildGoblinCollationPacket(gap);
   els.runGoblin.disabled = true;
   try {
-    if (state.goblinAdapter) {
-      els.goblinStatus.textContent = "Goblin collation running…";
-      const result = await state.goblinAdapter(packet);
-      const suggestion = Array.isArray(result) ? result[0] : result?.suggestion ?? result;
-      if (suggestion?.shotOrigin && suggestion?.goalZone) applyVideoSuggestion(suggestion, "Goblin");
-      if (result?.clips?.length) renderClipMatches(result.clips);
-      els.goblinStatus.textContent = "Collation returned provisional evidence for analyst review.";
-    } else {
+    els.goblinStatus.textContent = "Goblin compound research running: scope → discover → corroborate → synthesise…";
+    let result;
+    try {
+      result = state.goblinAdapter
+        ? await state.goblinAdapter(packet)
+        : await fetchJson("/api/goblin/research", {
+            method: "POST",
+            headers: { "content-type": "application/json" },
+            body: JSON.stringify(packet)
+          });
+    } catch (agentError) {
+      if (state.goblinAdapter) throw agentError;
       let queue = [];
       try { queue = JSON.parse(localStorage.getItem("avi-goblin-ingress-queue") ?? "[]"); } catch { queue = []; }
       localStorage.setItem("avi-goblin-ingress-queue", JSON.stringify([...queue.filter((item) => item.gap.id !== gap.id), packet]));
-      els.goblinStatus.textContent = "Gap packet queued locally. Register aviRegisterGoblinAdapter(adapter) to run collation.";
+      els.goblinStatus.textContent = `Research agent unavailable; gap packet queued locally. ${agentError.message}`;
+      return;
     }
+    state.goblinResearch = result;
+    const suggestion = Array.isArray(result) ? result[0] : result?.suggestion ?? result;
+    if (suggestion?.shotOrigin && suggestion?.goalZone) applyVideoSuggestion(suggestion, "Goblin compound research");
+    if (result?.clips?.length) renderClipMatches(result.clips);
+    renderGoblinResearch(result);
+    els.goblinStatus.textContent = "Compound research completed; all output remains provisional pending analyst review.";
   } catch (error) {
     els.goblinStatus.textContent = `Collation failed: ${error.message}`;
   } finally {
     els.runGoblin.disabled = false;
   }
+}
+
+function renderGoblinResearch(result) {
+  const sources = result?.sourceRuns ?? [];
+  const completed = sources.filter((source) => source.status === "completed").length;
+  const confidence = Math.round(Number(result?.confidence ?? 0) * 100);
+  els.goblinResearchSummary.textContent = `${completed}/${sources.length} sources · ${result?.evidence?.length ?? 0} evidence items · ${result?.clips?.length ?? 0} clips · ${confidence}% top confidence`;
+  els.goblinResearchTrace.innerHTML = (result?.trace ?? []).map((entry) => `<li data-status="${escapeHtml(entry.status)}"><strong>${escapeHtml(entry.stage)}</strong><span>${escapeHtml(entry.detail)}</span></li>`).join("");
 }
 
 async function findKeeperClips() {

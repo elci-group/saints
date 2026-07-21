@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
-import { inferActionsFromTranscript, searchConcacafYoutube, transcribeWithGroq } from "./server.mjs";
+import { inferActionsFromTranscript, researchGoblinPacket, searchConcacafYoutube, transcribeWithGroq } from "./server.mjs";
+import { buildGoblinCollationPacket } from "./keeper-ingress.js";
 
 let transcriptionForm;
 const transcription = await transcribeWithGroq(Buffer.from("media"), {
@@ -45,5 +46,29 @@ assert.equal(youtube.clips[0].official, true);
 
 await assert.rejects(() => inferActionsFromTranscript({ transcript: "" }, { apiKey: "test" }), /required/);
 await assert.rejects(() => transcribeWithGroq(Buffer.from("x"), {}), /GROQ_API_KEY/);
+
+const goblin = await researchGoblinPacket(buildGoblinCollationPacket({
+  id: "test-gap",
+  fixtureId: "vin-test",
+  goalkeeper: "Test Keeper",
+  opponent: "Grenada",
+  type: "trajectory",
+  query: "SVG Grenada highlights",
+  evidenceUrl: "https://example.com/report"
+}), {
+  env: {},
+  goblinSources: [{
+    id: "licensed-feed",
+    sourceType: "licensed event feed",
+    collect: async () => ({ items: [{
+      evidenceUrl: "https://example.com/feed",
+      suggestion: { minute: 55, situation: "open-play", shotOrigin: "Penalty spot", goalZone: "Low right" }
+    }] })
+  }]
+});
+assert.equal(goblin.agent, "goblin-compound-research");
+assert.equal(goblin.status, "review_required");
+assert.equal(goblin.sourceRuns.find((source) => source.id === "concacaf-youtube").status, "failed");
+assert.equal(goblin.provisional, true);
 
 console.log("AVI evidence server tests passed");
