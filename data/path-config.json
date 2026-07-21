@@ -1,5 +1,21 @@
 {
   "version": "1.0.0",
+  "teamCategories": [
+    {
+      "id": "senior",
+      "label": "Senior",
+      "homeAirport": "SVD",
+      "color": "#087a62"
+    },
+    {
+      "id": "u21",
+      "label": "U20 / U21 pathway",
+      "homeAirport": "SVD",
+      "color": "#d69b1f",
+      "callupTypes": ["Men U20", "Men U21"]
+    }
+  ],
+  "teamSchedules": [],
   "destinationByCountry": {
     "Saint Vincent and the Grenadines": "SVD", "Grenada": "GND", "Saint Lucia": "UVF",
     "Dominica": "DOM", "Antigua and Barbuda": "ANU", "Barbados": "BGI", "Guyana": "GEO",

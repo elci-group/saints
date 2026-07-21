@@ -12,6 +12,7 @@ export class PathTracker {
     this.transfers = readJson("avi-path-transfers", {});
     this.flightOptions = readJson("avi-path-flight-options", []);
     this.scheduleRecords = readJson("avi-path-schedules", []);
+    this.teamScheduleRecords = readJson("avi-path-team-schedules", config.teamSchedules ?? []);
   }
 
   originFor(player) {
@@ -132,6 +133,40 @@ export class PathTracker {
     this.scheduleRecords.push(...records);
     writeJson("avi-path-schedules", this.scheduleRecords);
   }
+
+  ingestTeamScheduleRecords(records) {
+    const valid = (records ?? []).filter((record) => record?.categoryId && record?.date && this.airports.has(record.destinationAirport));
+    const keyed = new Map(this.teamScheduleRecords.map((record) => [teamScheduleKey(record), record]));
+    valid.forEach((record) => keyed.set(teamScheduleKey(record), { status: "scheduled", kind: "away", ...record }));
+    this.teamScheduleRecords = [...keyed.values()];
+    writeJson("avi-path-team-schedules", this.teamScheduleRecords);
+    return valid.length;
+  }
+
+  resolveCategoryDestinations(asOf = new Date().toISOString().slice(0, 10)) {
+    return (this.config.teamCategories ?? [{ id: "senior", label: "Senior", homeAirport: "SVD", color: "#0a7a62" }])
+      .map((category) => {
+        const candidates = this.teamScheduleRecords
+          .filter((record) => record.categoryId === category.id && record.status !== "cancelled" && record.active !== false)
+          .filter((record) => record.date >= asOf && this.airports.has(record.destinationAirport))
+          .sort((a, b) => a.date.localeCompare(b.date));
+        const next = candidates[0] ?? null;
+        return {
+          categoryId: category.id,
+          label: category.label,
+          color: category.color,
+          destinationAirport: next?.destinationAirport ?? category.homeAirport ?? "SVD",
+          date: next?.date ?? null,
+          destinationType: next?.kind === "away" ? "away-fixture" : "home-assembly",
+          eventLabel: next?.label ?? (next ? "Home assembly" : "Saint Vincent home-base fallback"),
+          basis: next ? (next.source ?? "authorised schedule") : "No dated category fixture loaded"
+        };
+      });
+  }
+}
+
+function teamScheduleKey(record) {
+  return [record.categoryId, record.kind ?? "away", record.date, record.destinationAirport].join(":");
 }
 
 function haversine(a, b) {

@@ -32,4 +32,15 @@ assert.equal(ingested.remainingClubAway, 1);
 assert.equal(ingested.remainingInternational, 1);
 assert.equal(scheduled.calculatePlayer(player, "SVD", "eliminated").remainingInternational, 0);
 
+scheduled.ingestTeamScheduleRecords([
+  { categoryId: "senior", kind: "home", date: "2026-09-10", destinationAirport: "SVD", label: "Senior home camp" },
+  { categoryId: "senior", kind: "away", date: "2026-09-05", destinationAirport: "KIN", label: "Senior away fixture" },
+  { categoryId: "u21", kind: "away", date: "2026-10-02", destinationAirport: "GND", label: "U21 away fixture" }
+]);
+const categoryDestinations = scheduled.resolveCategoryDestinations("2026-08-01");
+assert.equal(categoryDestinations.find((category) => category.categoryId === "senior").destinationAirport, "KIN");
+assert.equal(categoryDestinations.find((category) => category.categoryId === "senior").destinationType, "away-fixture");
+assert.equal(categoryDestinations.find((category) => category.categoryId === "u21").destinationAirport, "GND");
+assert.equal(new PathTracker(config).resolveCategoryDestinations("2026-08-01")[0].destinationAirport, "SVD");
+
 console.log("PATH route and schedule tests passed");
