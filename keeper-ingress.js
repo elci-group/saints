@@ -48,13 +48,19 @@ export function buildGoblinCollationPacket(gap) {
   if (!gap?.fixtureId) throw new Error("A fixture evidence gap is required");
   return {
     task: "goalkeeper-evidence-collation",
-    schemaVersion: 1,
+    schemaVersion: 2,
     gap,
     constraints: {
-      allowedSources: ["official match report", "licensed event feed", "analyst-linked video", "YouTube Data API metadata"],
+      allowedSources: ["official match report", "licensed event feed", "analyst-linked video", "YouTube Data API metadata", "existing provenance"],
       neverInferAsObserved: true,
       requiredFields: ["goalkeeper", "date", "opponent", "outcome", "evidenceUrl"],
       trajectoryFields: ["minute", "situation", "shotOrigin", "goalZone"]
+    },
+    orchestration: {
+      agent: "goblin-compound-research",
+      stages: ["scope", "discover", "corroborate", "synthesise", "review"],
+      parallelDiscovery: true,
+      outputStatus: "provisional"
     }
   };
 }
