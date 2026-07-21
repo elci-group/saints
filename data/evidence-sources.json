@@ -1,0 +1,50 @@
+{
+  "name": "Padagonia Broadcast Evidence Sources",
+  "updated": "2026-07-20",
+  "sources": [
+    {
+      "id": "concacaf-youtube",
+      "label": "Concacaf YouTube",
+      "type": "official-video-metadata",
+      "handle": "@concacaf",
+      "channelUrl": "https://www.youtube.com/concacaf",
+      "trust": 0.94,
+      "adapter": "youtube-data-api",
+      "policy": "Search metadata only; pixels require an authorised local broadcast file."
+    },
+    {
+      "id": "local-broadcast",
+      "label": "Analyst-authorised local broadcast",
+      "type": "video-evidence",
+      "trust": 0.9,
+      "adapter": "browser-file",
+      "policy": "Analyst must hold access rights and confirm derived action records."
+    },
+    {
+      "id": "groq-stt",
+      "label": "Groq Whisper STT",
+      "type": "derived-commentary",
+      "trust": 0.68,
+      "adapter": "groq-audio-transcriptions",
+      "model": "whisper-large-v3-turbo",
+      "policy": "Timestamped transcript is derived evidence and remains provisional."
+    },
+    {
+      "id": "groq-action-inference",
+      "label": "Groq structured action inference",
+      "type": "extrapolated-action",
+      "trust": 0.55,
+      "adapter": "groq-chat-completions",
+      "model": "openai/gpt-oss-20b",
+      "policy": "Strict-schema candidates must be amended or confirmed by an analyst."
+    },
+    {
+      "id": "broadcast-geometry",
+      "label": "Calibrated broadcast geometry",
+      "type": "derived-tracking",
+      "trust": 0.78,
+      "adapter": "padagonia-homography-tracker",
+      "policy": "Goal-frame and pitch calibration generate candidates, never final observed records."
+    }
+  ]
+}

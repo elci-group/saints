@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AVI Football Intelligence</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      .analysis-controls { grid-template-columns: minmax(220px, 1.2fr) 120px minmax(190px, .9fr) 210px 170px; }
+      .winreq-controls { display:grid; grid-template-columns:minmax(220px,1fr) 160px minmax(260px,1.4fr); gap:14px; align-items:end; padding:16px; border:1px solid var(--line); background:#fff; }
+      .context-health { display:grid; grid-template-columns:minmax(300px,1fr) minmax(380px,1.4fr); gap:18px; }
+      .context-stats { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); margin-top:15px; border-top:1px solid var(--line); }
+      .context-stats div { padding:13px 9px 0 0; }.context-stats span,.context-stats small{display:block;color:var(--muted);font-size:.62rem;text-transform:uppercase}.context-stats strong{display:block;margin:5px 0;font-size:1.2rem}
+      .source-status-list { display:grid; gap:7px; margin-top:12px; }.source-status-row{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:10px;align-items:center;padding:8px 10px;border:1px solid var(--line);font-size:.73rem}.source-status-row small{display:block;margin-top:2px;color:var(--muted)}
+      .icon-button { width:34px;height:34px;border:1px solid #cbd7d1;background:#fff;color:var(--green);font-size:1.1rem;cursor:pointer}.icon-button:disabled{opacity:.45;cursor:wait}
+      .issue-list { display:grid; gap:7px; margin-top:12px; }.issue-row{padding:9px 10px;border-left:3px solid var(--yellow);background:#fff8e8;font-size:.72rem}.issue-row strong{display:block;margin-bottom:2px}
+      .winreq-grid { display:grid; grid-template-columns:1.2fr .8fr; gap:18px; }
+      .benchmark-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
+      .pattern-list { display:grid; gap:11px; margin-top:15px; }
+      .pattern-row { display:grid; grid-template-columns:110px 1fr 44px; gap:9px; align-items:center; font-size:.75rem; }
+      .pattern-track { height:8px; background:#e8eeeb; overflow:hidden; }.pattern-fill{height:100%;background:var(--green)}
+      .coverage-tag { display:inline-block; padding:4px 6px; background:#edf2ef; color:#52635b; font-size:.62rem; font-weight:850; text-transform:uppercase; }
+      .coverage-tag.inferred { background:#fff3d8; color:#80621c; }
+      .req-value { color:var(--green); font-weight:900; }.req-value.defensive{color:var(--red)}
+      #winReqTable td small { display:block; margin-top:3px; color:var(--muted); font-size:.64rem; text-transform:uppercase; }
+      .pdi-controls { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin-top:15px; }
+      .pdi-result { display:flex; align-items:baseline; gap:9px; padding:16px; margin-top:15px; background:var(--nav); color:#fff; }.pdi-result strong{font-size:2rem}.pdi-result span{color:#9fb0a9;font-size:.75rem}
+      .path-controls { display:grid; grid-template-columns:minmax(220px,1fr) minmax(210px,1fr) 180px; gap:14px; align-items:end; padding:16px; border:1px solid var(--line); background:#fff; }
+      .path-grid { display:grid; grid-template-columns:minmax(320px,.8fr) minmax(440px,1.2fr); gap:18px; }
+      .route-strip { display:flex; align-items:center; gap:7px; flex-wrap:wrap; margin:18px 0; }
+      .route-stop { min-width:48px; padding:8px 10px; border:1px solid #cbd7d1; background:#f8faf8; text-align:center; font-size:.74rem; font-weight:900; }
+      .route-arrow { color:var(--green); font-weight:900; }
+      .path-detail-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); border-top:1px solid var(--line); }
+      .path-detail-grid div { padding:13px 8px 0 0; }.path-detail-grid span{display:block;color:var(--muted);font-size:.62rem;text-transform:uppercase}.path-detail-grid strong{display:block;margin-top:5px;font-size:1rem}
+      .transfer-controls { display:grid; grid-template-columns:1fr 1fr 42px; gap:10px; align-items:end; margin-top:14px; }
+      .primary-icon { width:42px;height:42px;border:0;background:var(--green);color:#fff;font-size:1.05rem;font-weight:900;cursor:pointer }.primary-icon:hover{background:#075f4d}
+      .source-note { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:10px; padding:9px 0; border-top:1px solid var(--line); font-size:.75rem; }.source-note small{display:block;margin-top:3px;color:var(--muted)}
+      #pathTable tr[aria-selected="true"] td { background:var(--green-soft); }
+      #pathTable { min-width:1120px; }
+      #pathTable td small { display:block; margin-top:4px; color:var(--muted); font-size:.64rem; line-height:1.35; }
+      .travel-value { font-weight:900; color:var(--green); white-space:nowrap; }
+      .history-metrics { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); margin:0 0 16px; border:1px solid var(--line); background:#f8faf8; }
+      .history-metrics div { padding:12px 14px; border-right:1px solid var(--line); }.history-metrics div:last-child{border-right:0}.history-metrics span,.history-metrics small{display:block;color:var(--muted);font-size:.62rem;text-transform:uppercase}.history-metrics strong{display:block;margin:5px 0;font-size:1.15rem}
+      .result-mark { display:inline-grid; place-items:center; width:24px; height:24px; margin-right:7px; background:#e8eeeb; font-size:.68rem; font-weight:950; }.result-mark.W{background:#dff2e9;color:#08785f}.result-mark.L{background:#f9e4e1;color:#a9362d}.result-mark.D{background:#fff1cf;color:#7a5a0b}
+      #historyTable td small { display:block; margin-top:3px; color:var(--muted); font-size:.64rem; }
+      .keeper-controls { display:grid; grid-template-columns:minmax(240px,1fr) 220px 220px; gap:14px; align-items:end; padding:16px; border:1px solid var(--line); background:#fff; }
+      .keeper-grid { display:grid; grid-template-columns:minmax(540px,1.35fr) minmax(340px,.65fr); gap:18px; }
+      .keeper-scene-panel { padding:0; overflow:hidden; background:#e8eeeb; }
+      .keeper-scene-panel .section-head { align-items:center; padding:18px; margin:0; background:#fff; }
+      .keeper-scene-shell { position:relative; min-height:440px; }
+      .keeper-canvas { display:block; width:100%; height:clamp(440px,52vw,620px); background:#e8eeeb; cursor:grab; touch-action:none; }
+      .keeper-canvas:active { cursor:grabbing; }
+      .keeper-scene-tools { position:absolute; top:12px; right:12px; z-index:2; display:flex; gap:7px; }
+      .keeper-scene-tools .icon-button { border-color:rgba(255,255,255,.7); background:rgba(23,35,31,.86); color:#fff; box-shadow:0 4px 12px rgba(0,0,0,.16); }
+      .keeper-scene-legend { position:absolute; left:12px; bottom:12px; z-index:2; display:flex; gap:13px; padding:8px 10px; background:rgba(23,35,31,.86); color:#fff; font-size:.66rem; font-weight:800; }
+      .keeper-scene-legend span { display:flex; align-items:center; gap:5px; }.scene-swatch{width:16px;height:3px;background:#35d2a2}.scene-swatch.penalty{background:#c8493d}
+      .keeper-scene-panel .coverage-warning { margin:0; }
+      .ingress-grid { display:grid; grid-template-columns:minmax(360px,.8fr) minmax(500px,1.2fr); gap:18px; }
+      .ingress-actions { display:grid; grid-template-columns:minmax(0,1fr) 42px; gap:10px; align-items:end; margin:14px 0; }
+      .gap-list,.clip-results { display:grid; gap:7px; max-height:330px; overflow:auto; }
+      .gap-row,.clip-row { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:10px; align-items:center; padding:10px; border:1px solid var(--line); background:#fafbfa; text-align:left; }
+      .gap-row strong,.clip-row strong { display:block; font-size:.78rem; }.gap-row small,.clip-row small{display:block;margin-top:3px;color:var(--muted);font-size:.68rem}
+      .gap-row[aria-selected="true"] { border-color:#6eb8a3; background:var(--green-soft); }
+      .gap-priority { color:var(--red); font-size:.68rem; font-weight:900; }
+      .clip-row { width:100%; cursor:pointer; }.clip-row:hover{border-color:#8dbbad}.clip-row img{width:88px;aspect-ratio:16/9;object-fit:cover;grid-row:1/span 2}.clip-row-content{display:grid;grid-template-columns:88px minmax(0,1fr);gap:10px;align-items:center}
+      .clip-preview { display:none; width:100%; aspect-ratio:16/9; margin-top:12px; border:0; background:#17231f; }.clip-preview.active{display:block}
+      .wizard-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; }
+      .wizard-grid .wide { grid-column:span 2; }.wizard-actions{display:flex;justify-content:flex-end;gap:9px;margin-top:14px}.wizard-status{margin-right:auto;align-self:center;color:var(--muted);font-size:.72rem}
+      .command-button { min-height:40px; padding:0 14px; border:1px solid #aabbb3; background:#fff; color:var(--green); font-size:.75rem; font-weight:850; cursor:pointer; }.command-button.primary{border-color:var(--green);background:var(--green);color:#fff}.command-button:disabled{opacity:.5;cursor:wait}
+      .broadcast-panel { padding:0; overflow:hidden; }.broadcast-panel>.section-head{padding:18px;margin:0}.broadcast-source-band{display:grid;grid-template-columns:minmax(260px,1fr) auto auto;gap:10px;align-items:end;padding:14px 18px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#f8faf8}
+      .broadcast-grid{display:grid;grid-template-columns:minmax(520px,1.35fr) minmax(320px,.65fr)}.broadcast-stage-column{min-width:0;padding:18px;border-right:1px solid var(--line)}.broadcast-side{display:grid;align-content:start;gap:14px;padding:18px}
+      .broadcast-stage{position:relative;width:100%;aspect-ratio:16/9;background:#111}.broadcast-video,.tracking-canvas{position:absolute;inset:0;width:100%;height:100%;display:block}.broadcast-video{object-fit:contain}.tracking-canvas{z-index:2;cursor:crosshair;touch-action:none;pointer-events:none}.tracking-canvas.tracking-active{pointer-events:auto}
+      .tracking-toolbar{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:4px;padding:4px;background:#edf1ef}.tracking-tool{height:38px;border:0;background:transparent;color:#566760;font-size:.68rem;font-weight:850;cursor:pointer}.tracking-tool.active{background:#fff;color:var(--green);box-shadow:0 1px 4px rgba(0,0,0,.08)}
+      .timeline-row{display:grid;grid-template-columns:42px minmax(0,1fr) 42px;gap:8px;align-items:center;margin-top:11px}.timeline-time{font-size:.68rem;font-weight:850;color:var(--muted);font-variant-numeric:tabular-nums}.timeline-range{width:100%;accent-color:var(--green)}.timeline-markers{position:relative;height:22px;margin:2px 50px 0;background:linear-gradient(#e2e8e5,#e2e8e5) center/100% 1px no-repeat}.timeline-marker{position:absolute;top:4px;width:8px;height:14px;padding:0;border:0;background:var(--yellow);transform:translateX(-50%);cursor:pointer}.timeline-marker.track{background:var(--green)}.timeline-marker.inferred{background:var(--red)}
+      .tracking-fields{display:grid;grid-template-columns:1fr 1fr;gap:10px}.tracking-actions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.tracking-status{padding:9px 10px;background:#f7faf8;border-left:3px solid var(--green);font-size:.7rem;line-height:1.4}
+      .transcript-box{width:100%;min-height:130px;resize:vertical;border:1px solid #cfd8d3;padding:10px;color:var(--ink);font:inherit;font-size:.75rem;line-height:1.45}.candidate-list{display:grid;gap:7px;max-height:220px;overflow:auto}.candidate-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:center;width:100%;padding:9px 10px;border:1px solid var(--line);background:#fafbfa;text-align:left;cursor:pointer}.candidate-row strong,.candidate-row small{display:block}.candidate-row strong{font-size:.75rem}.candidate-row small{margin-top:3px;color:var(--muted);font-size:.66rem}
+      .insight-block { padding:12px 13px; margin-top:10px; border-left:3px solid var(--green); background:#f7faf8; font-size:.78rem; line-height:1.5; }.insight-block.attack{border-left-color:var(--red)}.insight-block strong{display:block;margin-bottom:3px}
+      .coverage-warning { padding:10px 12px; margin-top:12px; background:#fff4d9; color:#6f5517; font-size:.72rem; }
+      @media (max-width: 1180px) { .analysis-controls { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+      @media (max-width: 900px) { .winreq-grid,.benchmark-grid,.context-health,.path-grid,.keeper-grid,.ingress-grid { grid-template-columns:1fr; } }
+      @media (max-width: 720px) {
+        .analysis-controls,.winreq-controls,.pdi-controls,.path-controls,.transfer-controls,.keeper-controls { grid-template-columns: 1fr; }
+        .sidebar .nav-list { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); overflow:visible; }
+        .sidebar .nav-button { min-width:0; height:50px; padding:4px 1px; gap:1px; flex-direction:column; font-size:.56rem; white-space:nowrap; justify-content:center; }
+        .sidebar .nav-button span { width:auto; font-size:.92rem; }
+        .path-detail-grid { grid-template-columns:1fr 1fr; }
+        .history-metrics { grid-template-columns:1fr 1fr; }
+        .history-metrics div:nth-child(2){border-right:0}.history-metrics div:nth-child(-n+2){border-bottom:1px solid var(--line)}
+        .primary-icon { width:100%; }
+        .keeper-scene-shell { min-height:380px; }.keeper-canvas{height:380px}.wizard-grid{grid-template-columns:1fr 1fr}.wizard-grid .wide{grid-column:span 2}.wizard-actions{flex-wrap:wrap}.wizard-status{width:100%;order:3}.broadcast-source-band,.broadcast-grid{grid-template-columns:1fr}.broadcast-stage-column{border-right:0;border-bottom:1px solid var(--line)}.tracking-toolbar{grid-template-columns:repeat(3,1fr)}
+      }
+    </style>
+  </head>
+  <body>
+    <main class="app-shell">
+      <aside class="sidebar" aria-label="Primary navigation">
+        <div class="brand">
+          <span class="brand-mark">AVI</span>
+          <div><strong>Football Intelligence</strong><small>SVG programme</small></div>
+        </div>
+        <nav class="nav-list" aria-label="Workspace views">
+          <button class="nav-button active" type="button" data-view-target="scouting"><span>◎</span> Player pools</button>
+          <button class="nav-button" type="button" data-view-target="analysis"><span>⌁</span> AVI visualiser</button>
+          <button class="nav-button" type="button" data-view-target="winreq"><span>◇</span> Win-Req</button>
+          <button class="nav-button" type="button" data-view-target="keepers"><span>🧤</span> Keeper Lab</button>
+          <button class="nav-button" type="button" data-view-target="path"><span>✈</span> PATH</button>
+        </nav>
+        <div class="sidebar-status">
+          <span class="live-dot"></span>
+          <div><strong id="dbName">Loading data</strong><small><span id="playerCount">0</span> model players · <span id="weightCount">0</span> weights</small></div>
+        </div>
+      </aside>
+
+      <section class="workspace">
+        <header class="topbar">
+          <div><p class="eyebrow">Recruitment and opposition</p><h1>Caribbean talent intelligence</h1></div>
+          <div class="source-state" id="sourceState"><span>●</span> Official U20 pool · 2026</div>
+        </header>
+
+        <section class="view active" data-view="scouting">
+          <div class="filter-band">
+            <label class="field"><span>Nation</span><select id="nationSelect"></select></label>
+            <label class="field"><span>Position</span><select id="positionFilter"><option value="all">All positions</option><option value="GK">🧤 Goalkeepers</option><option value="DF">🛡 Defenders</option><option value="MF">🎯 Midfielders</option><option value="FW">⚡ Forwards</option></select></label>
+            <label class="field search-field"><span>Find player or club</span><input id="playerSearch" type="search" placeholder="Search pool…"></label>
+          </div>
+
+          <section class="nation-summary">
+            <div><p class="eyebrow">Selected programme</p><h2 id="scoutingTitle">U20 call-up pool</h2><p id="scoutingMeta"></p></div>
+            <div class="summary-metrics">
+              <div><span>Pool</span><strong id="scoutingCount">0</strong><small>players</small></div>
+              <div><span>Average age</span><strong id="averageAge">0</strong><small>years</small></div>
+              <div><span>Overseas</span><strong id="overseasCount">0</strong><small>based</small></div>
+              <div><span>Opponent tier</span><strong id="opponentTier">Home</strong><small>priority</small></div>
+            </div>
+          </section>
+
+          <section class="registry">
+            <div class="section-head"><div><p class="eyebrow">Verified call-ups</p><h2>Player registry</h2></div><span id="visibleCount">0 shown</span></div>
+            <div class="table-wrap"><table class="scouting-table"><thead><tr><th>Player</th><th>Position</th><th>Nationality</th><th>Age</th><th>Club</th><th>Foot</th></tr></thead><tbody id="scoutingTable"></tbody></table></div>
+          </section>
+        </section>
+
+        <section class="view" data-view="analysis">
+          <div class="analysis-controls">
+            <label class="field"><span>Fixture constraint</span><select id="fixtureSelect"></select></label>
+            <label class="field"><span>Formation</span><select id="formationSelect"></select></label>
+            <label class="field"><span>Highest-XAVI XI</span><select id="lineupSelect" disabled></select></label>
+            <div class="toggle-group" role="group" aria-label="Valuation mode"><button class="segment active" type="button" data-mode="cost">Cost AVI</button><button class="segment" type="button" data-mode="revenue">Revenue AVI</button></div>
+            <label class="range-field"><span>Synergy <output id="synergyOutput">1.00x</output></span><input id="synergyRange" type="range" min="0" max="1.8" value="1" step="0.05"></label>
+          </div>
+
+          <section class="analysis-summary"><div><p class="eyebrow">Winning action budget</p><h2 id="fixtureTitle">Loading model</h2></div><div class="summary-metrics"><div><span>WAB covered</span><strong id="wabCovered">0%</strong></div><div><span>XAVI</span><strong id="xaviValue">0.00</strong></div><div><span>Annual cost</span><strong id="annualCost">£0</strong></div><div><span>Density</span><strong id="density">0%</strong></div></div></section>
+
+          <section class="grid two"><article class="panel"><div class="section-head"><div><p class="eyebrow">Constraint profile</p><h2>Required vs supplied</h2></div></div><div id="wabBars" class="bar-list"></div></article><article class="panel network-panel"><div class="section-head"><div><p class="eyebrow">Cross action value</p><h2>Positional CAV network</h2></div><span>Line weight = CAV</span></div><canvas id="networkCanvas" width="760" height="460" aria-label="CAV player network"></canvas></article></section>
+
+          <section class="directness-section"><div class="section-head"><div><p class="eyebrow">Possession intelligence</p><h2 id="directnessTitle">Directness index</h2></div><p>Goalmouth-to-corner and centre-circle-to-corner movement observations.</p></div><div class="directness-grid"><article class="panel directness-summary"><div class="directness-score-wrap"><div class="directness-score" id="halfFieldScore">0.00</div><div><p class="metric-label">Half-field</p><strong id="halfFieldClass">Direct through middle</strong></div></div><div class="directness-score-wrap"><div class="directness-score" id="fullFieldScore">0.00</div><div><p class="metric-label">Full-field</p><strong id="fullFieldClass">Direct through middle</strong></div></div><div class="index-scale"><span>-2</span><span>-1</span><span>0 Direct</span><span>1</span><span>2</span></div></article><article class="panel"><p class="eyebrow">Source measures</p><h2>Spatial inputs</h2><div id="directnessInputs" class="source-list"></div></article><article class="panel"><p class="eyebrow">Comparison</p><h2>Possession profiles</h2><div id="directnessComparison" class="directness-list"></div></article></div></section>
+
+          <section class="grid three"><article class="panel"><p class="eyebrow">MVL</p><h2>Most valuable lineup</h2><div id="lineupRankings" class="ranking-list"></div></article><article class="panel"><p class="eyebrow">Risk</p><h2>Dependency index</h2><div id="dependencyList" class="ranking-list"></div></article><article class="panel"><p class="eyebrow">Resilience</p><h2>Replacement cost</h2><div id="replacementList" class="ranking-list"></div></article></section>
+
+          <section class="panel"><div class="section-head"><div><p class="eyebrow">Player economics</p><h2>AVI and AER leaderboard</h2></div></div><div class="table-wrap"><table><thead><tr><th>Player</th><th>Pos</th><th>Contribution</th><th>AVI</th><th>AER</th><th>Cost / win unit</th></tr></thead><tbody id="playerTable"></tbody></table></div></section>
+        </section>
+
+        <section class="view" data-view="winreq">
+          <div class="winreq-controls">
+            <label class="field"><span>Upcoming opposition</span><select id="winReqOpponent"></select></label>
+            <label class="field"><span>Venue</span><select id="winReqVenue"><option>Home</option><option>Away</option><option>Neutral</option></select></label>
+            <div><span class="coverage-tag inferred">History-linked model</span><p class="scouting-meta">Real SVG fixtures and conditions · opponent tracking fields inferred where unavailable</p></div>
+            <label class="field"><span>Domain</span><select id="contextDomain"><option value="international">International</option><option value="club">Club</option></select></label>
+            <label class="field"><span>Competition</span><select id="contextCompetition"><option>All competitions</option><option>World Cup qualifying</option><option>Concacaf Nations League</option><option>International friendlies</option></select></label>
+            <label class="field"><span>Entity level</span><select id="contextPlayer"><option value="">Team aggregate</option></select></label>
+          </div>
+
+          <section class="context-health">
+            <article class="panel"><div class="section-head"><div><p class="eyebrow">JIT context broker</p><h2>Consensus health</h2></div><button id="refreshContext" class="icon-button" type="button" title="Refresh source context" aria-label="Refresh source context">↻</button></div><p id="opponentContext" class="scouting-meta">Context is loaded only when this page or opponent is selected.</p><div class="context-stats"><div><span>Confidence</span><strong id="contextConfidence">0%</strong><small>weighted</small></div><div><span>Validated</span><strong id="validatedPoints">0</strong><small>points</small></div><div><span>Disputed</span><strong id="disputedPoints">0</strong><small>flags</small></div><div><span>Cache</span><strong id="cacheState">Cold</strong><small>JIT state</small></div></div></article>
+            <article class="panel"><div class="section-head"><div><p class="eyebrow">Source variance</p><h2>Ingestion status</h2></div><span id="sourceCoverage">0 / 6 active</span></div><div id="sourceStatusList" class="source-status-list"></div><div id="contextIssues" class="issue-list"></div></article>
+          </section>
+
+          <section class="panel"><div class="section-head"><div><p class="eyebrow">Padagonia historical evidence</p><h2 id="historyTitle">SVG matchup history</h2></div><span id="historyCoverage">Loading fixture archive</span></div><div class="history-metrics"><div><span>Record</span><strong id="historyRecord">0-0-0</strong><small>W-D-L</small></div><div><span>Goals</span><strong id="historyGoals">0:0</strong><small>for : against</small></div><div><span>Last meeting</span><strong id="historyLast">—</strong><small>calendar date</small></div><div><span>Conditions</span><strong id="historyWeather">0%</strong><small>weather coverage</small></div></div><div class="table-wrap"><table><thead><tr><th>Date</th><th>Opponent</th><th>Venue</th><th>Score</th><th>Competition</th><th>Rest / travel</th><th>Conditions</th><th>Provenance</th></tr></thead><tbody id="historyTable"></tbody></table></div></section>
+
+          <section class="analysis-summary"><div><p class="eyebrow">Upcoming opposition</p><h2 id="winReqTitle">Win requirement</h2></div><div class="summary-metrics"><div><span>Attack level</span><strong id="attackLevel">0</strong><small>/ 100</small></div><div><span>Defence level</span><strong id="defenceLevel">0</strong><small>/ 100</small></div><div><span>Transition</span><strong id="transitionTarget">0s</strong><small>target</small></div><div><span>PDI</span><strong id="pdiScore">0</strong><small>physical load</small></div></div></section>
+
+          <section class="panel"><div class="section-head"><div><p class="eyebrow">Outcome benchmark</p><h2>What winning this fixture requires</h2></div><span>Loss/win values are opponent averages</span></div><div class="table-wrap"><table><thead><tr><th>Performance measure</th><th>Opp. losses</th><th>Opp. wins</th><th>SVG requirement</th><th>Coverage</th></tr></thead><tbody id="winReqTable"></tbody></table></div></section>
+
+          <section class="benchmark-grid">
+            <article class="panel"><p class="eyebrow">Chance geography</p><h2>Shooting hotspots that beat them</h2><div id="hotspotList" class="pattern-list"></div></article>
+            <article class="panel"><p class="eyebrow">Final action</p><h2>Assist methods in their losses</h2><div id="assistList" class="pattern-list"></div></article>
+          </section>
+
+          <section class="winreq-grid">
+            <article class="panel"><p class="eyebrow">Physical dynamism index</p><h2>Match-load context</h2><div class="pdi-controls"><label class="field"><span>SVG player weight (kg)</span><input id="svgWeight" type="number" min="55" max="110" value="74"></label><label class="field"><span>Opponent weight (kg)</span><input id="opponentWeight" type="number" min="55" max="110" value="76"></label><label class="field"><span>Pitch length (m)</span><input id="pitchLength" type="number" min="90" max="120" value="105"></label><label class="field"><span>Pitch width (m)</span><input id="pitchWidth" type="number" min="55" max="85" value="68"></label><label class="field"><span>Conditions</span><select id="pitchCondition"><option value="1">Dry</option><option value="1.08">Wet</option><option value="1.14">Heavy</option><option value="1.1">Hot / humid</option></select></label><label class="field"><span>Opponent strength</span><input id="opponentStrength" type="number" min="0.7" max="1.4" step="0.05" value="1"></label></div><div class="pdi-result"><strong id="pdiCalories">0</strong><span>estimated kcal / outfield player</span></div></article>
+            <article class="panel"><p class="eyebrow">Model interpretation</p><h2>PDI inputs</h2><div id="pdiBreakdown" class="source-list"></div></article>
+          </section>
+        </section>
+
+        <section class="view" data-view="keepers">
+          <div class="keeper-controls">
+            <label class="field"><span>Goalkeeper</span><select id="keeperSelect"></select></label>
+            <label class="field"><span>Analysis layer</span><select id="keeperLayer"><option value="all">All conceded events</option><option value="open-play">Open play</option><option value="penalty">Penalty layer</option></select></label>
+            <div><span class="coverage-tag inferred" id="keeperEvidenceState">Evidence constrained</span><p class="scouting-meta">Observed events are separated from inferred training advice.</p></div>
+          </div>
+
+          <section class="analysis-summary"><div><p class="eyebrow">Goalkeeper trajectory analysis</p><h2 id="keeperTitle">Keeper training profile</h2></div><div class="summary-metrics"><div><span>Conceded</span><strong id="keeperConceded">0</strong><small>attributed</small></div><div><span>Trajectory</span><strong id="keeperTrajectory">0%</strong><small>coded</small></div><div><span>Penalties</span><strong id="keeperPenalties">0</strong><small>known attempts</small></div><div><span>Matches</span><strong id="keeperMatches">0</strong><small>report coverage</small></div></div></section>
+
+          <section class="keeper-grid">
+            <article class="panel keeper-scene-panel"><div class="section-head"><div><p class="eyebrow">Shot origin to goal zone</p><h2>3D final-third trajectory map</h2></div><span id="keeperSceneCount">0 coded paths</span></div><div class="keeper-scene-shell"><canvas id="keeperCanvas" class="keeper-canvas" width="960" height="600" aria-label="Interactive 3D goalkeeper final-third trajectory pitch"></canvas><div class="keeper-scene-tools"><button id="resetKeeperCamera" class="icon-button" type="button" title="Reset camera" aria-label="Reset 3D camera">↺</button><button id="toggleKeeperMotion" class="icon-button" type="button" title="Pause trajectory motion" aria-label="Pause trajectory motion">Ⅱ</button></div><div class="keeper-scene-legend" aria-label="Trajectory legend"><span><i class="scene-swatch"></i>Open play</span><span><i class="scene-swatch penalty"></i>Penalty</span></div></div><div id="keeperCoverageWarning" class="coverage-warning"></div></article>
+            <article class="panel"><p class="eyebrow">Bidirectional final-third training</p><h2>Training translation</h2><div id="attackingKeeperInsights"></div><div id="defensiveKeeperInsights"></div></article>
+          </section>
+
+          <section class="ingress-grid">
+            <article class="panel"><div class="section-head"><div><p class="eyebrow">Padagonia evidence queue</p><h2>Goblin ingress</h2></div><span id="gapCount">0 gaps</span></div><div class="ingress-actions"><label class="field"><span>Collation target</span><select id="gapSelect"></select></label><button id="runGoblin" class="primary-icon" type="button" title="Run Goblin collation" aria-label="Run Goblin collation">↯</button></div><div id="goblinStatus" class="coverage-warning">Gap queue ready.</div><div id="gapList" class="gap-list"></div></article>
+            <article class="panel"><div class="section-head"><div><p class="eyebrow">Authorised video discovery</p><h2>YouTube clip matcher</h2></div><span id="clipMatchCount">0 matches</span></div><div class="tracking-fields"><label class="field"><span>Evidence source</span><select id="clipSource"><option value="concacaf">Concacaf · official channel</option><option value="youtube">All YouTube</option></select></label><label class="field"><span>YouTube Data API key</span><input id="youtubeApiKey" type="password" autocomplete="off" placeholder="Session fallback"></label></div><div class="ingress-actions"><label class="field"><span>Search query</span><input id="clipSearch" type="search" autocomplete="off"></label><button id="searchClips" class="primary-icon" type="button" title="Search YouTube clips" aria-label="Search YouTube clips">⌕</button></div><div class="source-note"><span><strong>Concacaf YouTube</strong><small>@concacaf · channel identity resolved before search</small></span><span class="coverage-tag">Official</span></div><div id="clipResults" class="clip-results"></div><iframe id="clipPreview" class="clip-preview" title="Selected match clip" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></article>
+          </section>
+
+          <section class="panel broadcast-panel"><div class="section-head"><div><p class="eyebrow">Calibrated video intelligence</p><h2>Broadcast evidence studio</h2></div><span id="serverServiceState">Checking server</span></div><div class="broadcast-source-band"><label class="field"><span>Authorised local broadcast file</span><input id="broadcastFile" type="file" accept="video/mp4,video/webm,audio/mpeg,audio/mp4,audio/wav,audio/ogg"></label><button id="transcribeBroadcast" class="command-button" type="button">STT commentary</button><button id="inferCommentary" class="command-button primary" type="button">Infer actions</button></div><div class="broadcast-grid"><div class="broadcast-stage-column"><div id="broadcastStage" class="broadcast-stage"><video id="broadcastVideo" class="broadcast-video" controls playsinline></video><canvas id="trackingCanvas" class="tracking-canvas" width="960" height="540" aria-label="Pitch calibrated ball and player tracking overlay"></canvas></div><div class="timeline-row"><span id="timelineCurrent" class="timeline-time">00:00</span><input id="broadcastTimeline" class="timeline-range" type="range" min="0" max="1" value="0" step="0.04" aria-label="Broadcast timeline"><button id="addTimelineMarker" class="icon-button" type="button" title="Add review marker" aria-label="Add timeline marker">＋</button></div><div id="timelineMarkers" class="timeline-markers" aria-label="Timeline markers"></div></div><aside class="broadcast-side"><div class="tracking-toolbar" role="group" aria-label="Tracking mode"><button class="tracking-tool active" type="button" data-track-tool="cursor">Cursor</button><button class="tracking-tool" type="button" data-track-tool="pitch">Pitch</button><button class="tracking-tool" type="button" data-track-tool="goal">Goal</button><button class="tracking-tool" type="button" data-track-tool="ball">Ball</button><button class="tracking-tool" type="button" data-track-tool="svg-player">SVG player</button><button class="tracking-tool" type="button" data-track-tool="opp-player">Opponent</button></div><div class="tracking-fields"><label class="field"><span>Pitch landmark</span><select id="pitchLandmark"></select></label><label class="field"><span>Track ID</span><input id="broadcastTrackId" type="text" value="ball" maxlength="32"></label></div><div class="tracking-actions"><button id="undoTrackingPoint" class="command-button" type="button">Undo</button><button id="runAutoTracking" class="command-button" type="button">Auto track</button><button id="inferTrackedGoals" class="command-button primary" type="button">Goal candidates</button></div><div id="trackingStatus" class="tracking-status">Load a local broadcast to begin calibration.</div><label class="field"><span>Timestamped commentary</span><textarea id="broadcastTranscript" class="transcript-box" placeholder="Server STT output or analyst transcript"></textarea></label><div><div class="section-head"><div><p class="eyebrow">Provisional records</p><h2>Action candidates</h2></div><span id="broadcastCandidateCount">0 found</span></div><div id="broadcastCandidates" class="candidate-list"></div></div></aside></div></section>
+
+          <section class="panel"><div class="section-head"><div><p class="eyebrow">Analyst-confirmed action coding</p><h2>Manual intelligence wizard</h2></div><span id="wizardEvidenceState" class="coverage-tag inferred">Draft</span></div><div class="wizard-grid"><label class="field wide"><span>Evidence gap</span><select id="wizardGap"></select></label><label class="field wide"><span>Clip URL</span><input id="wizardClipUrl" type="url" placeholder="https://www.youtube.com/watch?v=…"></label><label class="field"><span>Clip time (seconds)</span><input id="wizardClipTime" type="number" min="0" step="1" value="0"></label><label class="field"><span>Match minute</span><input id="wizardMinute" type="number" min="1" max="130"></label><label class="field"><span>Situation</span><select id="wizardSituation"><option value="open-play">Open play</option><option value="penalty">Penalty</option><option value="set-piece">Set piece</option><option value="counterattack">Counterattack</option></select></label><label class="field"><span>Outcome</span><select id="wizardOutcome"><option value="conceded">Conceded</option><option value="saved">Saved</option><option value="saved-retaken">Saved, retaken</option></select></label><label class="field wide"><span>Shot origin</span><select id="wizardOrigin"><option value="">Not coded</option><option>Penalty spot</option><option>Left side of six-yard box</option><option>Centre of six-yard box</option><option>Right side of six-yard box</option><option>Left side of penalty area</option><option>Centre of penalty area</option><option>Right side of penalty area</option><option>Left of centre circle</option><option>Centre circle</option><option>Right of centre circle</option></select></label><label class="field wide"><span>Goal zone</span><select id="wizardGoalZone"><option value="">Not coded</option><option>Low left</option><option>Low centre</option><option>Low right</option><option>Mid left</option><option>Mid centre</option><option>Mid right</option><option>High left</option><option>High centre</option><option>High right</option></select></label></div><div class="wizard-actions"><span id="wizardStatus" class="wizard-status">No model suggestion loaded.</span><button id="runVideoModel" class="command-button" type="button">◇ Video-in suggestion</button><button id="saveKeeperAction" class="command-button primary" type="button">Confirm action data</button></div></section>
+
+          <section class="panel"><div class="section-head"><div><p class="eyebrow">Attributed goal log</p><h2>Known goals conceded</h2></div><span id="keeperEventCount">0 events</span></div><div class="table-wrap"><table><thead><tr><th>Date</th><th>Opponent</th><th>Minute</th><th>Situation</th><th>Shot origin</th><th>Goal zone</th><th>Evidence</th></tr></thead><tbody id="keeperEventTable"></tbody></table></div></section>
+
+          <section class="panel"><div class="section-head"><div><p class="eyebrow">Penalty layer</p><h2>Penalty evidence and strategy</h2></div><span>Outcome, line discipline and direction</span></div><div class="table-wrap"><table><thead><tr><th>Date</th><th>Opponent</th><th>Outcome</th><th>Direction</th><th>Evidence quality</th><th>Training use</th></tr></thead><tbody id="penaltyTable"></tbody></table></div></section>
+        </section>
+
+        <section class="view" data-view="path">
+          <div class="path-controls">
+            <label class="field"><span>Player pool</span><select id="pathNation"></select></label>
+            <label class="field"><span>Next international destination</span><select id="pathDestination"></select></label>
+            <label class="field"><span>Competition state</span><select id="pathQualification"><option value="active">Qualification active</option><option value="qualified">Qualified</option><option value="eliminated">Eliminated</option></select></label>
+          </div>
+
+          <section class="analysis-summary"><div><p class="eyebrow">Player aggregated travel hours</p><h2 id="pathTitle">Travel-load forecast</h2></div><div class="summary-metrics"><div><span>Completed</span><strong id="pathCompleted">0h</strong><small>modelled</small></div><div><span>Remaining</span><strong id="pathRemaining">0h</strong><small>club + country</small></div><div><span>Highest load</span><strong id="pathHighest">—</strong><small>player</small></div><div><span>Destination</span><strong id="pathAirport">SVD</strong><small>arrival airport</small></div></div></section>
+
+          <section class="panel"><div class="section-head"><div><p class="eyebrow">Squad travel exposure</p><h2>PATH ranking</h2></div><span>Sorted by predicted remaining hours</span></div><div class="table-wrap"><table><thead><tr><th>Player</th><th>Club / origin</th><th>Inbound route</th><th>Completed</th><th>Club remaining</th><th>International remaining</th><th>PATH forecast</th><th>Coverage</th></tr></thead><tbody id="pathTable"></tbody></table></div></section>
+
+          <section class="path-grid">
+            <article class="panel"><div class="section-head"><div><p class="eyebrow">Optimal inbound path</p><h2 id="pathPlayerTitle">Select a player</h2></div><span id="pathRouteSource">Route model</span></div><label class="field"><span>Player</span><select id="pathPlayer"></select></label><div id="pathRoute" class="route-strip"></div><p id="pathRouteMeta" class="scouting-meta"></p><div class="path-detail-grid"><div><span>Distance</span><strong id="pathDistance">0 km</strong></div><div><span>One-way</span><strong id="pathOneWay">0h</strong></div><div><span>Location basis</span><strong id="pathLocationBasis">Fallback</strong></div></div></article>
+            <article class="panel"><p class="eyebrow">Transfer adjustment</p><h2>Update club geography</h2><p class="scouting-meta">Overrides the current club and departure airport; the ranking and remaining schedule are recalculated immediately.</p><div class="transfer-controls"><label class="field"><span>New club</span><input id="transferClub" type="text" placeholder="Club name"></label><label class="field"><span>Nearest airport</span><select id="transferAirport"></select></label><button id="applyTransfer" class="primary-icon" type="button" title="Apply transfer" aria-label="Apply transfer">↻</button></div><div id="pathSources" class="source-status-list"></div></article>
+          </section>
+        </section>
+      </section>
+    </main>
+    <script src="app.js" type="module"></script>
+  </body>
+</html>

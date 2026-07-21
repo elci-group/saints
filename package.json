@@ -1,0 +1,15 @@
+{
+  "name": "avi-football-intelligence",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node server.mjs",
+    "test": "node context-engine.test.mjs && node path-engine.test.mjs && node keeper-lab.test.mjs && node tracking-engine.test.mjs && node server.test.mjs && node scripts/ingest-svg-history.test.mjs"
+  },
+  "dependencies": {
+    "three": "0.180.0"
+  },
+  "devDependencies": {
+    "playwright-core": "1.55.0"
+  }
+}

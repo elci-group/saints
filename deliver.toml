@@ -1,0 +1,244 @@
+[[file]]
+path = "index.html"
+required = true
+min_size_bytes = 1000
+require_regex = ["AVI Football Intelligence", "nationSelect", "fixtureSelect", "formationSelect", "networkCanvas", "winReqOpponent", "Physical dynamism index", "data-view=\"path\"", "pathTable", "data-view=\"keepers\"", "keeperCanvas", "3D final-third trajectory map", "Goblin ingress", "YouTube clip matcher", "Concacaf · official channel", "Broadcast evidence studio", "trackingCanvas", "broadcastTimeline", "wizardGap", "historyTable"]
+forbid_regex = ["TODO", "FIXME", "Lorem ipsum"]
+
+[[file]]
+path = "app.js"
+required = true
+min_size_bytes = 4000
+require_regex = ["ContextBroker", "PathTracker", "KeeperFinalThirdScene", "BroadcastTracker", "buildKeeperEvidenceGaps", "calculateLineupModel", "optimizeFormation", "renderNetwork", "buildWinReqProfile", "calculatePdi", "renderPath", "renderKeeperAnalysis", "renderKeeperIngress", "aviRegisterGoblinAdapter", "aviRegisterVideoModelAdapter", "aviRegisterBroadcastTracker", "transcribeBroadcast", "inferCommentaryActions", "inferTrackedGoals", "aviIngestGoalkeeperEvents", "aviIngestPathSchedules", "historicalFixtures", "padagonia-db.json"]
+forbid_regex = ["TODO", "FIXME", "console\\.log"]
+
+[[file]]
+path = "styles.css"
+required = true
+min_size_bytes = 3000
+require_regex = ["\\.app-shell", "\\.nation-summary", "\\.scouting-table", "\\.network-panel"]
+forbid_regex = ["TODO", "FIXME"]
+
+[[file]]
+path = "data/padagonia-db.json"
+required = true
+min_size_bytes = 5000
+require_regex = ["Padagonia Action Value Database", "interactions", "lineups"]
+forbid_regex = ["TODO", "FIXME"]
+
+[[file]]
+path = "data/concacaf-u20-pools.json"
+required = true
+min_size_bytes = 20000
+require_regex = ["Saint Vincent and the Grenadines", "2026 Concacaf U20 Qualifiers", "nationality"]
+forbid_regex = ["TODO", "FIXME", "Lorem ipsum"]
+
+[[file]]
+path = "context-engine.js"
+required = true
+min_size_bytes = 5000
+require_regex = ["PadagoniaContextArray", "JitContextCache", "buildConsensus", "weightedMedian"]
+forbid_regex = ["TODO", "FIXME", "console\\.log"]
+
+[[file]]
+path = "data/context-sources.json"
+required = true
+min_size_bytes = 1000
+require_regex = ["wikipedia", "bbc-sport", "livescore", "plaintext-scores", "metricTrust"]
+forbid_regex = ["TODO", "FIXME"]
+
+[[file]]
+path = "path-engine.js"
+required = true
+min_size_bytes = 4000
+require_regex = ["PathTracker", "calculatePlayer", "ingestScheduleRecords", "shortestRoute", "Home-airport fallback"]
+forbid_regex = ["TODO", "FIXME", "console\\.log"]
+
+[[file]]
+path = "data/path-config.json"
+required = true
+min_size_bytes = 2000
+require_regex = ["destinationByCountry", "clubCountryAirport", "flightSources", "amadeus", "opensky"]
+forbid_regex = ["TODO", "FIXME"]
+
+[[file]]
+path = "data/svg-fixture-history.json"
+required = true
+min_size_bytes = 100000
+require_regex = ["SVG senior historical fixture context", "national-football-teams", "open-meteo-archive", "goalkeeperAnalysis", "consensus", "contextRecords"]
+forbid_regex = ["TODO", "FIXME", "Lorem ipsum"]
+
+[[file]]
+path = "keeper-scene.js"
+required = true
+min_size_bytes = 9000
+require_regex = ["THREE.WebGLRenderer", "trajectoryCoordinates", "KeeperFinalThirdScene", "CatmullRomCurve3", "resetCamera", "trajectoryCount"]
+forbid_regex = ["TODO", "FIXME", "console\\.log"]
+
+[[file]]
+path = "keeper-ingress.js"
+required = true
+min_size_bytes = 4000
+require_regex = ["buildKeeperEvidenceGaps", "buildGoblinCollationPacket", "searchYouTubeClips", "searchYouTubeChannelClips", "forHandle", "youtube/v3/search", "neverInferAsObserved", "normalizeVideoSuggestion"]
+forbid_regex = ["TODO", "FIXME", "console\\.log"]
+
+[[file]]
+path = "tracking-engine.js"
+required = true
+min_size_bytes = 7000
+require_regex = ["computeHomography", "projectPoint", "BroadcastTracker", "addPitchLandmark", "inferGoalCandidates", "provisional"]
+forbid_regex = ["TODO", "FIXME", "console\\.log"]
+
+[[file]]
+path = "server.mjs"
+required = true
+min_size_bytes = 10000
+require_regex = ["createAviServer", "transcribeWithGroq", "inferActionsFromTranscript", "searchConcacafYoutube", "whisper-large-v3-turbo", "openai/gpt-oss-20b", "forHandle", "json_schema"]
+forbid_regex = ["TODO", "FIXME", "console\\.log"]
+
+[[file]]
+path = "data/evidence-sources.json"
+required = true
+min_size_bytes = 1500
+require_regex = ["concacaf-youtube", "@concacaf", "groq-stt", "groq-action-inference", "broadcast-geometry", "provisional"]
+forbid_regex = ["TODO", "FIXME"]
+
+[[file]]
+path = "vendor/three.module.min.js"
+required = true
+min_size_bytes = 300000
+require_regex = ["Three.js Authors", "three.core.min.js"]
+
+[[file]]
+path = "vendor/three.core.min.js"
+required = true
+min_size_bytes = 100000
+require_regex = ["Three.js Authors"]
+
+[[file]]
+path = "scripts/ingest-svg-history.mjs"
+required = true
+min_size_bytes = 15000
+require_regex = ["parseWikiResultsTable", "parseNationalFootballTeams", "enrichWeather", "enrichGoalkeeperReports", "event-count-mismatch", "toContextRecords"]
+forbid_regex = ["TODO", "FIXME"]
+
+[[command]]
+name = "javascript syntax"
+cmd = ["node", "--check", "app.js"]
+expect_exit = 0
+timeout_secs = 10
+
+[[command]]
+name = "context engine syntax"
+cmd = ["node", "--check", "context-engine.js"]
+expect_exit = 0
+timeout_secs = 10
+
+[[command]]
+name = "Keeper Lab module syntax"
+cmd = ["node", "--check", "keeper-scene.js"]
+expect_exit = 0
+timeout_secs = 10
+
+[[command]]
+name = "Keeper ingress syntax"
+cmd = ["node", "--check", "keeper-ingress.js"]
+expect_exit = 0
+timeout_secs = 10
+
+[[command]]
+name = "Broadcast tracking syntax"
+cmd = ["node", "--check", "tracking-engine.js"]
+expect_exit = 0
+timeout_secs = 10
+
+[[command]]
+name = "AVI server syntax"
+cmd = ["node", "--check", "server.mjs"]
+expect_exit = 0
+timeout_secs = 10
+
+[[command]]
+name = "Keeper Lab tests"
+cmd = ["node", "keeper-lab.test.mjs"]
+expect_exit = 0
+timeout_secs = 10
+stdout_contains = ["Keeper Lab scene and ingress tests passed"]
+
+[[command]]
+name = "Broadcast tracking tests"
+cmd = ["node", "tracking-engine.test.mjs"]
+expect_exit = 0
+timeout_secs = 10
+stdout_contains = ["Broadcast tracking geometry tests passed"]
+
+[[command]]
+name = "AVI evidence server tests"
+cmd = ["node", "server.test.mjs"]
+expect_exit = 0
+timeout_secs = 10
+stdout_contains = ["AVI evidence server tests passed"]
+
+[[command]]
+name = "context consensus tests"
+cmd = ["node", "context-engine.test.mjs"]
+expect_exit = 0
+timeout_secs = 10
+stdout_contains = ["context consensus tests passed"]
+
+[[command]]
+name = "PATH engine tests"
+cmd = ["node", "path-engine.test.mjs"]
+expect_exit = 0
+timeout_secs = 10
+stdout_contains = ["PATH route and schedule tests passed"]
+
+[[command]]
+name = "SVG history ingestion tests"
+cmd = ["node", "scripts/ingest-svg-history.test.mjs"]
+expect_exit = 0
+timeout_secs = 10
+stdout_contains = ["SVG history ingestion tests passed"]
+
+[[command]]
+name = "database json validity"
+cmd = ["python3", "-m", "json.tool", "data/padagonia-db.json"]
+expect_exit = 0
+timeout_secs = 10
+
+[[command]]
+name = "scouting pool json validity"
+cmd = ["python3", "-m", "json.tool", "data/concacaf-u20-pools.json"]
+expect_exit = 0
+timeout_secs = 10
+
+[[command]]
+name = "context source json validity"
+cmd = ["python3", "-m", "json.tool", "data/context-sources.json"]
+expect_exit = 0
+timeout_secs = 10
+
+[[command]]
+name = "PATH config json validity"
+cmd = ["python3", "-m", "json.tool", "data/path-config.json"]
+expect_exit = 0
+timeout_secs = 10
+
+[[command]]
+name = "SVG fixture history json validity"
+cmd = ["python3", "-m", "json.tool", "data/svg-fixture-history.json"]
+expect_exit = 0
+timeout_secs = 10
+
+[[command]]
+name = "evidence source json validity"
+cmd = ["python3", "-m", "json.tool", "data/evidence-sources.json"]
+expect_exit = 0
+timeout_secs = 10
+
+[[command]]
+name = "formation catalogue count"
+cmd = ["node", "-e", "const s=require('fs').readFileSync('app.js','utf8');const m=s.match(/const formationSpecs = \\[(.*?)\\n\\];/s);const n=(m?.[1].match(/^  \\[/gm)||[]).length;if(n!==50){console.error(n);process.exit(1)}console.log('50 formations')"]
+expect_exit = 0
+timeout_secs = 10
+stdout_contains = ["50 formations"]

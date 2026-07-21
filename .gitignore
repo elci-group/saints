@@ -1,0 +1,5 @@
+/node_modules/
+/.kaptaind/
+.env*
+*.log
+/memory/

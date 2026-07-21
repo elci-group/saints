@@ -1,0 +1,2346 @@
+{
+  "meta": {
+    "source": "CONCACAF 2026 U20 Qualifiers official final rosters",
+    "sourceUrl": "https://www.concacaf.com/media/pjgjg21t/26_mu20-qualifiers-rosters.pdf",
+    "retrievedAt": "2026-07-20"
+  },
+  "countries": [
+    {
+      "country": "Antigua and Barbuda",
+      "flag": "🇦🇬",
+      "callupType": "Men U20",
+      "competition": "2026 Concacaf U20 Qualifiers",
+      "players": [
+        {
+          "number": 1,
+          "position": "GK",
+          "name": "GAVIN GONSALVES",
+          "dateOfBirth": "24.04.2008",
+          "club": "HOMESTEAD-SHS (USA)",
+          "nationality": "Antigua and Barbuda",
+          "flag": "🇦🇬"
+        },
+        {
+          "number": 2,
+          "position": "DF",
+          "name": "JORDAN FRANCIS",
+          "dateOfBirth": "26.05.2007",
+          "club": "ASTON VILLA (ATG)",
+          "nationality": "Antigua and Barbuda",
+          "flag": "🇦🇬"
+        },
+        {
+          "number": 3,
+          "position": "DF",
+          "name": "IVAN GRANT",
+          "dateOfBirth": "22.08.2007",
+          "club": "UNATTACHED (ATG)",
+          "nationality": "Antigua and Barbuda",
+          "flag": "🇦🇬"
+        },
+        {
+          "number": 4,
+          "position": "DF",
+          "name": "JAYDEN BOWEN",
+          "dateOfBirth": "15.01.2007",
+          "club": "ALL SAINTS UNITED FC",
+          "nationality": "Antigua and Barbuda",
+          "flag": "🇦🇬"
+        },
+        {
+          "number": 5,
+          "position": "FW",
+          "name": "JEVAUGHN JARVIS",
+          "dateOfBirth": "30.01.2007",
+          "club": "GARDEN STARS FC (ATG)",
+          "nationality": "Antigua and Barbuda",
+          "flag": "🇦🇬"
+        },
+        {
+          "number": 6,
+          "position": "MF",
+          "name": "DAJARI BARTHLEY",
+          "dateOfBirth": "13.11.2007",
+          "club": "BEDE'S SENIOR SCHOOL",
+          "nationality": "Antigua and Barbuda",
+          "flag": "🇦🇬"
+        },
+        {
+          "number": 7,
+          "position": "FW",
+          "name": "JOSEPH JACOBS",
+          "dateOfBirth": "01.03.2007",
+          "club": "UNATTACHED (ATG)",
+          "nationality": "Antigua and Barbuda",
+          "flag": "🇦🇬"
+        },
+        {
+          "number": 8,
+          "position": "MF",
+          "name": "OBEDIAH BROWNE",
+          "dateOfBirth": "25.07.2008",
+          "club": "OLD ROAD FC (ATG)",
+          "nationality": "Antigua and Barbuda",
+          "flag": "🇦🇬"
+        },
+        {
+          "number": 9,
+          "position": "FW",
+          "name": "GREG WILLIAMS",
+          "dateOfBirth": "15.05.2008",
+          "club": "FC MASTERBALLERZ (ATG)",
+          "nationality": "Antigua and Barbuda",
+          "flag": "🇦🇬"
+        },
+        {
+          "number": 10,
+          "position": "MF",
+          "name": "KAYONTE GEORGE",
+          "dateOfBirth": "08.01.2007",
+          "club": "FINN HOLSING (GER)",
+          "nationality": "Antigua and Barbuda",
+          "flag": "🇦🇬"
+        },
+        {
+          "number": 11,
+          "position": "DF",
+          "name": "CONROY BROWN",
+          "dateOfBirth": "08.04.2007",
+          "club": "SG WATTENSCHEID 09",
+          "nationality": "Antigua and Barbuda",
+          "flag": "🇦🇬"
+        },
+        {
+          "number": 12,
+          "position": "DF",
+          "name": "SETH LAYNE",
+          "dateOfBirth": "27.02.2008",
+          "club": "COMBINE ACADEMY (ENG)",
+          "nationality": "Antigua and Barbuda",
+          "flag": "🇦🇬"
+        },
+        {
+          "number": 13,
+          "position": "DF",
+          "name": "JOSHUA ROACHE",
+          "dateOfBirth": "25.12.2008",
+          "club": "ALL SAINTS UNITED FC",
+          "nationality": "Antigua and Barbuda",
+          "flag": "🇦🇬"
+        },
+        {
+          "number": 14,
+          "position": "MF",
+          "name": "BRANDON SATCHELL",
+          "dateOfBirth": "12.03.2008",
+          "club": "CHRISTIAN HIGH SCHOOL",
+          "nationality": "Antigua and Barbuda",
+          "flag": "🇦🇬"
+        },
+        {
+          "number": 15,
+          "position": "MF",
+          "name": "ZIDAAN WILLIAMS",
+          "dateOfBirth": "02.04.2008",
+          "club": "FLORIDA NATIONAL",
+          "nationality": "Antigua and Barbuda",
+          "flag": "🇦🇬"
+        },
+        {
+          "number": 16,
+          "position": "MF",
+          "name": "SEDIQUE ADAMS",
+          "dateOfBirth": "09.10.2007",
+          "club": "ALL SAINTS UNITED FC",
+          "nationality": "Antigua and Barbuda",
+          "flag": "🇦🇬"
+        },
+        {
+          "number": 17,
+          "position": "MF",
+          "name": "JAIDEN WRAY",
+          "dateOfBirth": "23.11.2007",
+          "club": "PIGGOTTS BULLETS",
+          "nationality": "Antigua and Barbuda",
+          "flag": "🇦🇬"
+        },
+        {
+          "number": 18,
+          "position": "GK",
+          "name": "TEGAN GUMBS",
+          "dateOfBirth": "26.04.2007",
+          "club": "ROCKFORD HIGH SCHOOL",
+          "nationality": "Antigua and Barbuda",
+          "flag": "🇦🇬"
+        },
+        {
+          "number": 19,
+          "position": "MF",
+          "name": "VAUGHN JACKSON",
+          "dateOfBirth": "22.09.2008",
+          "club": "ALL SAINTS UNITED FC",
+          "nationality": "Antigua and Barbuda",
+          "flag": "🇦🇬"
+        },
+        {
+          "number": 20,
+          "position": "FW",
+          "name": "MARCO MICHAEL",
+          "dateOfBirth": "30.05.2008",
+          "club": "FUTURE PRO (ENG)",
+          "nationality": "Antigua and Barbuda",
+          "flag": "🇦🇬"
+        }
+      ]
+    },
+    {
+      "country": "Barbados",
+      "flag": "🇧🇧",
+      "callupType": "Men U20",
+      "competition": "2026 Concacaf U20 Qualifiers",
+      "players": [
+        {
+          "number": 1,
+          "position": "GK",
+          "name": "BENJAMIN EVERETT",
+          "dateOfBirth": "12.10.2007",
+          "club": "KICKSTART RUSH (BRB)",
+          "nationality": "Barbados",
+          "flag": "🇧🇧"
+        },
+        {
+          "number": 2,
+          "position": "DF",
+          "name": "AMARI LAYNE",
+          "dateOfBirth": "19.04.2007",
+          "club": "WHITEHALL FA (BRB)",
+          "nationality": "Barbados",
+          "flag": "🇧🇧"
+        },
+        {
+          "number": 3,
+          "position": "DF",
+          "name": "KEBRA BRUCE",
+          "dateOfBirth": "22.02.2007",
+          "club": "FM FOUR PILLARS (BRB)",
+          "nationality": "Barbados",
+          "flag": "🇧🇧"
+        },
+        {
+          "number": 4,
+          "position": "MF",
+          "name": "AJANIE PAYNE",
+          "dateOfBirth": "27.04.2007",
+          "club": "FM FOUR PILLARS (BRB)",
+          "nationality": "Barbados",
+          "flag": "🇧🇧"
+        },
+        {
+          "number": 5,
+          "position": "DF",
+          "name": "KAMARI JOHNSON",
+          "dateOfBirth": "21.06.2007",
+          "club": "KICKSTART RUSH (BRB)",
+          "nationality": "Barbados",
+          "flag": "🇧🇧"
+        },
+        {
+          "number": 6,
+          "position": "MF",
+          "name": "RONAN LEE",
+          "dateOfBirth": "03.02.2007",
+          "club": "PHELPS SOCCER SCHOOL",
+          "nationality": "Barbados",
+          "flag": "🇧🇧"
+        },
+        {
+          "number": 7,
+          "position": "MF",
+          "name": "ROSS BOURNE",
+          "dateOfBirth": "22.08.2007",
+          "club": "ELLERTON FC (BRB)",
+          "nationality": "Barbados",
+          "flag": "🇧🇧"
+        },
+        {
+          "number": 8,
+          "position": "MF",
+          "name": "REUBEN JACOBS",
+          "dateOfBirth": "06.01.2007",
+          "club": "SILVER SANDS FC (BRB)",
+          "nationality": "Barbados",
+          "flag": "🇧🇧"
+        },
+        {
+          "number": 9,
+          "position": "FW",
+          "name": "JAYDAN GOMEZ",
+          "dateOfBirth": "23.08.2007",
+          "club": "FLORIDA FC (USA)",
+          "nationality": "Barbados",
+          "flag": "🇧🇧"
+        },
+        {
+          "number": 10,
+          "position": "MF",
+          "name": "JORDAN BRYAN",
+          "dateOfBirth": "02.07.2007",
+          "club": "LOUGHBOROUGH COLLEGE",
+          "nationality": "Barbados",
+          "flag": "🇧🇧"
+        },
+        {
+          "number": 11,
+          "position": "FW",
+          "name": "ERAGON BRIDGEMAN-SEALE",
+          "dateOfBirth": "23.04.2008",
+          "club": "KICKSTART RUSH FC (BRB)",
+          "nationality": "Barbados",
+          "flag": "🇧🇧"
+        },
+        {
+          "number": 12,
+          "position": "MF",
+          "name": "TASHAY JONES",
+          "dateOfBirth": "07.10.2007",
+          "club": "FM FOUR PILLARS (BRB)",
+          "nationality": "Barbados",
+          "flag": "🇧🇧"
+        },
+        {
+          "number": 13,
+          "position": "DF",
+          "name": "KARIM WADE",
+          "dateOfBirth": "21.10.2007",
+          "club": "PRIDE OF GALL HILL FC",
+          "nationality": "Barbados",
+          "flag": "🇧🇧"
+        },
+        {
+          "number": 14,
+          "position": "DF",
+          "name": "MICAIAH CLARKE",
+          "dateOfBirth": "02.09.2007",
+          "club": "PHELPS SOCCER SCHOOL",
+          "nationality": "Barbados",
+          "flag": "🇧🇧"
+        },
+        {
+          "number": 15,
+          "position": "DF",
+          "name": "ZACHARI YARD",
+          "dateOfBirth": "02.10.2007",
+          "club": "PHELPS SOCCER SCHOOL",
+          "nationality": "Barbados",
+          "flag": "🇧🇧"
+        },
+        {
+          "number": 16,
+          "position": "FW",
+          "name": "AZAHRI DALLAWY",
+          "dateOfBirth": "31.12.2007",
+          "club": "HAYNESVILLE FC (BRB)",
+          "nationality": "Barbados",
+          "flag": "🇧🇧"
+        },
+        {
+          "number": 17,
+          "position": "DF",
+          "name": "TRE MOORE",
+          "dateOfBirth": "28.12.2007",
+          "club": "UWI BLACKBIRDS (BRB)",
+          "nationality": "Barbados",
+          "flag": "🇧🇧"
+        },
+        {
+          "number": 18,
+          "position": "GK",
+          "name": "DAMARIO HAREWOOD",
+          "dateOfBirth": "25.09.2008",
+          "club": "MT. PLEASANT FA (JAM)",
+          "nationality": "Barbados",
+          "flag": "🇧🇧"
+        },
+        {
+          "number": 19,
+          "position": "MF",
+          "name": "KYMANI JONES",
+          "dateOfBirth": "06.09.2008",
+          "club": "UNATTACHED (BRB)",
+          "nationality": "Barbados",
+          "flag": "🇧🇧"
+        },
+        {
+          "number": 20,
+          "position": "MF",
+          "name": "XAVIER BAYNE",
+          "dateOfBirth": "12.12.2008",
+          "club": "KICKSTART RUSH FC (BRB)",
+          "nationality": "Barbados",
+          "flag": "🇧🇧"
+        },
+        {
+          "number": 21,
+          "position": "GK",
+          "name": "KAI CUNNINGHAM",
+          "dateOfBirth": "12.12.2008",
+          "club": "TECHNIQUE FC (BRB)",
+          "nationality": "Barbados",
+          "flag": "🇧🇧"
+        }
+      ]
+    },
+    {
+      "country": "Curaçao",
+      "flag": "🇨🇼",
+      "callupType": "Men U20",
+      "competition": "2026 Concacaf U20 Qualifiers",
+      "players": [
+        {
+          "number": 1,
+          "position": "GK",
+          "name": "GIULIANO BONEVACIA",
+          "dateOfBirth": "29.01.2008",
+          "club": "FC GRONINGEN (NED)",
+          "nationality": "Curaçao",
+          "flag": "🇨🇼"
+        },
+        {
+          "number": 2,
+          "position": "MF",
+          "name": "KYANO PENSO",
+          "dateOfBirth": "12.04.2008",
+          "club": "PSV EINDHOVEN (NED)",
+          "nationality": "Curaçao",
+          "flag": "🇨🇼"
+        },
+        {
+          "number": 3,
+          "position": "DF",
+          "name": "MART JANSEN",
+          "dateOfBirth": "24.04.2008",
+          "club": "VBV DE GRAAFSCHAP (NED)",
+          "nationality": "Curaçao",
+          "flag": "🇨🇼"
+        },
+        {
+          "number": 4,
+          "position": "DF",
+          "name": "LIYON RODDENHOF",
+          "dateOfBirth": "11.02.2007",
+          "club": "UNATTACHED (CUW)",
+          "nationality": "Curaçao",
+          "flag": "🇨🇼"
+        },
+        {
+          "number": 5,
+          "position": "DF",
+          "name": "JORVIMAR MARTINA",
+          "dateOfBirth": "07.05.2008",
+          "club": "PSV EINDHOVEN (NED)",
+          "nationality": "Curaçao",
+          "flag": "🇨🇼"
+        },
+        {
+          "number": 6,
+          "position": "MF",
+          "name": "KEYANE EL OUANSAIDI",
+          "dateOfBirth": "07.08.2007",
+          "club": "FEYENOORD (NED)",
+          "nationality": "Curaçao",
+          "flag": "🇨🇼"
+        },
+        {
+          "number": 7,
+          "position": "MF",
+          "name": "JERAYNO HUNTE",
+          "dateOfBirth": "12.02.2009",
+          "club": "UNATTACHED (CUW)",
+          "nationality": "Curaçao",
+          "flag": "🇨🇼"
+        },
+        {
+          "number": 8,
+          "position": "FW",
+          "name": "MIGLENNJAYDION POLONIUS",
+          "dateOfBirth": "09.05.2008",
+          "club": "SPARTAAN 20 (NED)",
+          "nationality": "Curaçao",
+          "flag": "🇨🇼"
+        },
+        {
+          "number": 9,
+          "position": "DF",
+          "name": "DAMIËNTHLY BERNARDINA",
+          "dateOfBirth": "24.04.2007",
+          "club": "SC CAMBUUR",
+          "nationality": "Curaçao",
+          "flag": "🇨🇼"
+        },
+        {
+          "number": 10,
+          "position": "FW",
+          "name": "SHURYJANO CORNECION",
+          "dateOfBirth": "26.06.2008",
+          "club": "UNATTACHED (CUW)",
+          "nationality": "Curaçao",
+          "flag": "🇨🇼"
+        },
+        {
+          "number": 11,
+          "position": "MF",
+          "name": "",
+          "dateOfBirth": "23.02.2008",
+          "club": "INTER MIAMI CF (USA)",
+          "nationality": "Curaçao",
+          "flag": "🇨🇼"
+        },
+        {
+          "number": 12,
+          "position": "GK",
+          "name": "IRDJOAILLY EMELINA",
+          "dateOfBirth": "17.04.2007",
+          "club": "RVVH (NED)",
+          "nationality": "Curaçao",
+          "flag": "🇨🇼"
+        },
+        {
+          "number": 13,
+          "position": "DF",
+          "name": "THYRONE LUCAS",
+          "dateOfBirth": "18.01.2009",
+          "club": "NEC NIJMEGEN (NED)",
+          "nationality": "Curaçao",
+          "flag": "🇨🇼"
+        },
+        {
+          "number": 14,
+          "position": "DF",
+          "name": "JURVAIN VALENTIJN",
+          "dateOfBirth": "23.02.2008",
+          "club": "FEYENOORD (NED)",
+          "nationality": "Curaçao",
+          "flag": "🇨🇼"
+        },
+        {
+          "number": 15,
+          "position": "MF",
+          "name": "RAYEN NIVILLAC",
+          "dateOfBirth": "02.01.2008",
+          "club": "WILLEM II (NED)",
+          "nationality": "Curaçao",
+          "flag": "🇨🇼"
+        },
+        {
+          "number": 16,
+          "position": "FW",
+          "name": "SHERMAYN ROMBLEY",
+          "dateOfBirth": "27.07.2007",
+          "club": "CVV INTER WILLEMSTAD",
+          "nationality": "Curaçao",
+          "flag": "🇨🇼"
+        },
+        {
+          "number": 17,
+          "position": "DF",
+          "name": "MILO BOSSERS",
+          "dateOfBirth": "12.11.2008",
+          "club": "WILLEM II (NED)",
+          "nationality": "Curaçao",
+          "flag": "🇨🇼"
+        },
+        {
+          "number": 18,
+          "position": "FW",
+          "name": "SEBASTIAN VAN WOERKOM",
+          "dateOfBirth": "17.02.2008",
+          "club": "CVV INTER WILLEMSTAD",
+          "nationality": "Curaçao",
+          "flag": "🇨🇼"
+        },
+        {
+          "number": 19,
+          "position": "MF",
+          "name": "JUNINHO FLORANUS",
+          "dateOfBirth": "19.10.2007",
+          "club": "JONG HOLLAND (CUW)",
+          "nationality": "Curaçao",
+          "flag": "🇨🇼"
+        },
+        {
+          "number": 20,
+          "position": "FW",
+          "name": "DAYVI BUSBY",
+          "dateOfBirth": "11.08.2008",
+          "club": "FC DEN BOSCH (NED)",
+          "nationality": "Curaçao",
+          "flag": "🇨🇼"
+        },
+        {
+          "number": 21,
+          "position": "GK",
+          "name": "MISHEAN LEUTERIA",
+          "dateOfBirth": "24.03.2007",
+          "club": "SCHERPENHEUVEL (CUW)",
+          "nationality": "Curaçao",
+          "flag": "🇨🇼"
+        }
+      ]
+    },
+    {
+      "country": "Dominica",
+      "flag": "🇩🇲",
+      "callupType": "Men U20",
+      "competition": "2026 Concacaf U20 Qualifiers",
+      "players": [
+        {
+          "number": 1,
+          "position": "GK",
+          "name": "JERRISON JAMES",
+          "dateOfBirth": "09.05.2008",
+          "club": "WE UNITED FC (DMA)",
+          "nationality": "Dominica",
+          "flag": "🇩🇲"
+        },
+        {
+          "number": 2,
+          "position": "FW",
+          "name": "DIAMON DOMINIQUE",
+          "dateOfBirth": "14.04.2008",
+          "club": "POINTE MICHEL (DMA)",
+          "nationality": "Dominica",
+          "flag": "🇩🇲"
+        },
+        {
+          "number": 3,
+          "position": "DF",
+          "name": "JAHMARI JNO BAPTISTE",
+          "dateOfBirth": "20.06.2008",
+          "club": "COLORADO RUSH SC (USA)",
+          "nationality": "Dominica",
+          "flag": "🇩🇲"
+        },
+        {
+          "number": 4,
+          "position": "MF",
+          "name": "DEANDRE FRANCIS",
+          "dateOfBirth": "09.08.2007",
+          "club": "EAST CENTRAL (DMA)",
+          "nationality": "Dominica",
+          "flag": "🇩🇲"
+        },
+        {
+          "number": 5,
+          "position": "DF",
+          "name": "YANNICK VIGILANT",
+          "dateOfBirth": "05.04.2008",
+          "club": "WE UNITED FC (DMA)",
+          "nationality": "Dominica",
+          "flag": "🇩🇲"
+        },
+        {
+          "number": 6,
+          "position": "MF",
+          "name": "JONATHAN WINSTON",
+          "dateOfBirth": "19.03.2007",
+          "club": "HOWARD UNIVERSITY (USA)",
+          "nationality": "Dominica",
+          "flag": "🇩🇲"
+        },
+        {
+          "number": 7,
+          "position": "FW",
+          "name": "DARIUS GASPER",
+          "dateOfBirth": "08.12.2008",
+          "club": "WE UNITED FC (DMA)",
+          "nationality": "Dominica",
+          "flag": "🇩🇲"
+        },
+        {
+          "number": 8,
+          "position": "DF",
+          "name": "SHERMAL CLIFTON-JOHN",
+          "dateOfBirth": "22.07.2007",
+          "club": "HARLEM UNITED (DMA)",
+          "nationality": "Dominica",
+          "flag": "🇩🇲"
+        },
+        {
+          "number": 9,
+          "position": "FW",
+          "name": "KURJEAN ISRAEL",
+          "dateOfBirth": "30.06.2008",
+          "club": "FOND COLE SC (DMA)",
+          "nationality": "Dominica",
+          "flag": "🇩🇲"
+        },
+        {
+          "number": 10,
+          "position": "MF",
+          "name": "NICHOLAS HARVE",
+          "dateOfBirth": "15.01.2007",
+          "club": "NORTH TORONTO SOCCER",
+          "nationality": "Dominica",
+          "flag": "🇩🇲"
+        },
+        {
+          "number": 11,
+          "position": "MF",
+          "name": "KONRAD SIMON",
+          "dateOfBirth": "09.10.2008",
+          "club": "HARLEM UNITED (DMA)",
+          "nationality": "Dominica",
+          "flag": "🇩🇲"
+        },
+        {
+          "number": 12,
+          "position": "GK",
+          "name": "MAYOJAH PACQUETTE",
+          "dateOfBirth": "18.09.2008",
+          "club": "SOUTH CITY FC (DMA)",
+          "nationality": "Dominica",
+          "flag": "🇩🇲"
+        },
+        {
+          "number": 13,
+          "position": "MF",
+          "name": "JAHEIM JNO-BAPTISTE",
+          "dateOfBirth": "20.06.2008",
+          "club": "COLORADO RUSH SC (USA)",
+          "nationality": "Dominica",
+          "flag": "🇩🇲"
+        },
+        {
+          "number": 14,
+          "position": "MF",
+          "name": "JOSIMAR GUSTAVE",
+          "dateOfBirth": "17.07.2007",
+          "club": "MIDDLEHAM UNITED (DMA)",
+          "nationality": "Dominica",
+          "flag": "🇩🇲"
+        },
+        {
+          "number": 15,
+          "position": "MF",
+          "name": "PERCY JAMES",
+          "dateOfBirth": "22.08.2008",
+          "club": "HOUSTON DYNAMO (USA)",
+          "nationality": "Dominica",
+          "flag": "🇩🇲"
+        },
+        {
+          "number": 16,
+          "position": "DF",
+          "name": "AJAY BELLOT",
+          "dateOfBirth": "09.10.2008",
+          "club": "VALLEY UNITED FC (DMA)",
+          "nationality": "Dominica",
+          "flag": "🇩🇲"
+        },
+        {
+          "number": 17,
+          "position": "MF",
+          "name": "JE'DYAN LOCKHART",
+          "dateOfBirth": "20.02.2008",
+          "club": "COSSATOT COMMUNITY",
+          "nationality": "Dominica",
+          "flag": "🇩🇲"
+        },
+        {
+          "number": 18,
+          "position": "MF",
+          "name": "TUIRIE CHRISTMAS",
+          "dateOfBirth": "28.05.2007",
+          "club": "WE UNITED FC (DMA)",
+          "nationality": "Dominica",
+          "flag": "🇩🇲"
+        },
+        {
+          "number": 19,
+          "position": "MF",
+          "name": "RAVON COIPEL",
+          "dateOfBirth": "12.09.2007",
+          "club": "WE UNITED FC (DMA)",
+          "nationality": "Dominica",
+          "flag": "🇩🇲"
+        },
+        {
+          "number": 20,
+          "position": "MF",
+          "name": "KENNETH VALMOND",
+          "dateOfBirth": "05.01.2008",
+          "club": "MIDDLEHAM UNITED (DMA)",
+          "nationality": "Dominica",
+          "flag": "🇩🇲"
+        },
+        {
+          "number": 21,
+          "position": "GK",
+          "name": "DWIGHT ELOI",
+          "dateOfBirth": "26.11.2008",
+          "club": "BATH ESTATE FC (DMA)",
+          "nationality": "Dominica",
+          "flag": "🇩🇲"
+        }
+      ]
+    },
+    {
+      "country": "Grenada",
+      "flag": "🇬🇩",
+      "callupType": "Men U20",
+      "competition": "2026 Concacaf U20 Qualifiers",
+      "players": [
+        {
+          "number": 1,
+          "position": "GK",
+          "name": "PETER ALEXANDER",
+          "dateOfBirth": "25.09.2007",
+          "club": "NORTH STARS (GRN)",
+          "nationality": "Grenada",
+          "flag": "🇬🇩"
+        },
+        {
+          "number": 2,
+          "position": "DF",
+          "name": "ASHONDE MURRAY",
+          "dateOfBirth": "31.01.2007",
+          "club": "MT. RICH (GRN)",
+          "nationality": "Grenada",
+          "flag": "🇬🇩"
+        },
+        {
+          "number": 3,
+          "position": "DF",
+          "name": "IBRAHIM FREDERICK",
+          "dateOfBirth": "22.04.2008",
+          "club": "UNATTACHED (GRN)",
+          "nationality": "Grenada",
+          "flag": "🇬🇩"
+        },
+        {
+          "number": 4,
+          "position": "DF",
+          "name": "JACE JAMES",
+          "dateOfBirth": "19.01.2007",
+          "club": "ST. JOHN'S SC (GRN)",
+          "nationality": "Grenada",
+          "flag": "🇬🇩"
+        },
+        {
+          "number": 5,
+          "position": "MF",
+          "name": "TERRYIQUE FRANCIS",
+          "dateOfBirth": "07.07.2007",
+          "club": "HURRICANES SC (GRN)",
+          "nationality": "Grenada",
+          "flag": "🇬🇩"
+        },
+        {
+          "number": 6,
+          "position": "MF",
+          "name": "DEVONTE' PHILLIP",
+          "dateOfBirth": "09.08.2008",
+          "club": "UNATTACHED (GRN)",
+          "nationality": "Grenada",
+          "flag": "🇬🇩"
+        },
+        {
+          "number": 7,
+          "position": "MF",
+          "name": "T'SHAY ST. LOUIS",
+          "dateOfBirth": "02.02.2008",
+          "club": "UNATTACHED (GRN)",
+          "nationality": "Grenada",
+          "flag": "🇬🇩"
+        },
+        {
+          "number": 8,
+          "position": "MF",
+          "name": "TANEIL VICTOR-MORAIN",
+          "dateOfBirth": "21.03.2008",
+          "club": "ST. DAVID'S FC (GRN)",
+          "nationality": "Grenada",
+          "flag": "🇬🇩"
+        },
+        {
+          "number": 9,
+          "position": "FW",
+          "name": "JAYQUAN PASSEE",
+          "dateOfBirth": "26.10.2007",
+          "club": "SUNJETS UNITED (GRN)",
+          "nationality": "Grenada",
+          "flag": "🇬🇩"
+        },
+        {
+          "number": 10,
+          "position": "MF",
+          "name": "RAHEEM RAEBURN",
+          "dateOfBirth": "15.02.2008",
+          "club": "NORTH STARS (GRN)",
+          "nationality": "Grenada",
+          "flag": "🇬🇩"
+        },
+        {
+          "number": 11,
+          "position": "DF",
+          "name": "KIMONE WILLIAMS",
+          "dateOfBirth": "02.12.2007",
+          "club": "PARADISE FC",
+          "nationality": "Grenada",
+          "flag": "🇬🇩"
+        },
+        {
+          "number": 12,
+          "position": "GK",
+          "name": "AMAURY ADOLPHUS",
+          "dateOfBirth": "29.05.2008",
+          "club": "CEDAR STATE ACADEMY",
+          "nationality": "Grenada",
+          "flag": "🇬🇩"
+        },
+        {
+          "number": 13,
+          "position": "MF",
+          "name": "JADEN JAMES",
+          "dateOfBirth": "17.01.2007",
+          "club": "FC CAMERHOGNE (GRN)",
+          "nationality": "Grenada",
+          "flag": "🇬🇩"
+        },
+        {
+          "number": 14,
+          "position": "DF",
+          "name": "BENJAMIN GREY",
+          "dateOfBirth": "27.05.2007",
+          "club": "WESTON FC (USA)",
+          "nationality": "Grenada",
+          "flag": "🇬🇩"
+        },
+        {
+          "number": 15,
+          "position": "MF",
+          "name": "ADON DANIEL",
+          "dateOfBirth": "12.04.2007",
+          "club": "QUEENS PARK RANGERS",
+          "nationality": "Grenada",
+          "flag": "🇬🇩"
+        },
+        {
+          "number": 16,
+          "position": "MF",
+          "name": "SAYON BURRIS",
+          "dateOfBirth": "01.02.2008",
+          "club": "POLICE SPORTS (GRN)",
+          "nationality": "Grenada",
+          "flag": "🇬🇩"
+        },
+        {
+          "number": 17,
+          "position": "MF",
+          "name": "NARSHON SYLVESTER",
+          "dateOfBirth": "15.01.2007",
+          "club": "HURRICANES SC (GRN)",
+          "nationality": "Grenada",
+          "flag": "🇬🇩"
+        },
+        {
+          "number": 18,
+          "position": "FW",
+          "name": "IZION FRAZER",
+          "dateOfBirth": "29.12.2008",
+          "club": "ST. JOHN'S SC (GRN)",
+          "nationality": "Grenada",
+          "flag": "🇬🇩"
+        },
+        {
+          "number": 19,
+          "position": "FW",
+          "name": "HAMZA FREDERICK",
+          "dateOfBirth": "22.04.2008",
+          "club": "UNATTACHED (GRN)",
+          "nationality": "Grenada",
+          "flag": "🇬🇩"
+        },
+        {
+          "number": 20,
+          "position": "MF",
+          "name": "EJAY GEORGE",
+          "dateOfBirth": "25.02.2007",
+          "club": "QUEENS PARK RANGERS",
+          "nationality": "Grenada",
+          "flag": "🇬🇩"
+        },
+        {
+          "number": 21,
+          "position": "GK",
+          "name": "OMARI GEORGE",
+          "dateOfBirth": "26.12.2008",
+          "club": "ST. JOHN SPORTS FC (GRN)",
+          "nationality": "Grenada",
+          "flag": "🇬🇩"
+        }
+      ]
+    },
+    {
+      "country": "Guyana",
+      "flag": "🇬🇾",
+      "callupType": "Men U20",
+      "competition": "2026 Concacaf U20 Qualifiers",
+      "players": [
+        {
+          "number": 1,
+          "position": "GK",
+          "name": "EMMANUEL LEWIS",
+          "dateOfBirth": "12.04.2007",
+          "club": "SLINGERZ FC (GUY)",
+          "nationality": "Guyana",
+          "flag": "🇬🇾"
+        },
+        {
+          "number": 2,
+          "position": "DF",
+          "name": "DAKARAI DRAKES",
+          "dateOfBirth": "13.03.2008",
+          "club": "MET OVAL ACADEMY (USA)",
+          "nationality": "Guyana",
+          "flag": "🇬🇾"
+        },
+        {
+          "number": 3,
+          "position": "DF",
+          "name": "CANDEL HAZEL",
+          "dateOfBirth": "03.03.2008",
+          "club": "SANTOS FC (GUY)",
+          "nationality": "Guyana",
+          "flag": "🇬🇾"
+        },
+        {
+          "number": 4,
+          "position": "DF",
+          "name": "WALKER SHABAZZ-EDWARDS",
+          "dateOfBirth": "04.05.2007",
+          "club": "IPSWICH TOWN FC (ENG)",
+          "nationality": "Guyana",
+          "flag": "🇬🇾"
+        },
+        {
+          "number": 5,
+          "position": "MF",
+          "name": "MICHAEL JOSEPH",
+          "dateOfBirth": "23.05.2008",
+          "club": "SLINGERZ FC (GUY)",
+          "nationality": "Guyana",
+          "flag": "🇬🇾"
+        },
+        {
+          "number": 6,
+          "position": "MF",
+          "name": "MAX ROBINSON",
+          "dateOfBirth": "22.09.2008",
+          "club": "SHATTUCK ST.MARY F.C.",
+          "nationality": "Guyana",
+          "flag": "🇬🇾"
+        },
+        {
+          "number": 7,
+          "position": "MF",
+          "name": "BRYAN WHARTON",
+          "dateOfBirth": "28.08.2007",
+          "club": "SLINGERZ FC (GUY)",
+          "nationality": "Guyana",
+          "flag": "🇬🇾"
+        },
+        {
+          "number": 8,
+          "position": "MF",
+          "name": "MARK PHILLIPS",
+          "dateOfBirth": "05.11.2007",
+          "club": "WESTERN TIGERS FC (GUY)",
+          "nationality": "Guyana",
+          "flag": "🇬🇾"
+        },
+        {
+          "number": 9,
+          "position": "FW",
+          "name": "REISS PARRIS",
+          "dateOfBirth": "04.11.2007",
+          "club": "TOTTENHAM HOTSPUR FC",
+          "nationality": "Guyana",
+          "flag": "🇬🇾"
+        },
+        {
+          "number": 10,
+          "position": "FW",
+          "name": "JADON HARRIS",
+          "dateOfBirth": "27.04.2008",
+          "club": "GUYANA DEFENCE FORCE",
+          "nationality": "Guyana",
+          "flag": "🇬🇾"
+        },
+        {
+          "number": 11,
+          "position": "FW",
+          "name": "SHELDON KENDALL",
+          "dateOfBirth": "29.01.2008",
+          "club": "MILLWALL FC (ENG)",
+          "nationality": "Guyana",
+          "flag": "🇬🇾"
+        },
+        {
+          "number": 13,
+          "position": "MF",
+          "name": "SHAQUAN DAVID",
+          "dateOfBirth": "14.03.2008",
+          "club": "SLINGERZ FC (GUY)",
+          "nationality": "Guyana",
+          "flag": "🇬🇾"
+        },
+        {
+          "number": 14,
+          "position": "DF",
+          "name": "JADEN THOM",
+          "dateOfBirth": "25.05.2007",
+          "club": "GUYANA POLICE FORCE FC",
+          "nationality": "Guyana",
+          "flag": "🇬🇾"
+        },
+        {
+          "number": 15,
+          "position": "DF",
+          "name": "TROY ANDREWS",
+          "dateOfBirth": "01.09.2007",
+          "club": "SANTOS FC (GUY)",
+          "nationality": "Guyana",
+          "flag": "🇬🇾"
+        },
+        {
+          "number": 16,
+          "position": "MF",
+          "name": "JAMAL FRASER",
+          "dateOfBirth": "23.11.2008",
+          "club": "KINGSTON COLLEGE (JAM)",
+          "nationality": "Guyana",
+          "flag": "🇬🇾"
+        },
+        {
+          "number": 17,
+          "position": "MF",
+          "name": "ISAIAH IFILL",
+          "dateOfBirth": "10.05.2008",
+          "club": "GUYANA DEFENCE FORCE",
+          "nationality": "Guyana",
+          "flag": "🇬🇾"
+        },
+        {
+          "number": 18,
+          "position": "GK",
+          "name": "TEJPAL NIJJAR",
+          "dateOfBirth": "15.09.2008",
+          "club": "RACING MADRID FC (ESP)",
+          "nationality": "Guyana",
+          "flag": "🇬🇾"
+        },
+        {
+          "number": 19,
+          "position": "FW",
+          "name": "QUAENCY FRASER",
+          "dateOfBirth": "01.11.2008",
+          "club": "GUYANA DEFENCE FORCE",
+          "nationality": "Guyana",
+          "flag": "🇬🇾"
+        },
+        {
+          "number": 20,
+          "position": "FW",
+          "name": "LUKE LANGEVINE",
+          "dateOfBirth": "21.02.2008",
+          "club": "GUYANA DEFENCE FORCE",
+          "nationality": "Guyana",
+          "flag": "🇬🇾"
+        },
+        {
+          "number": 21,
+          "position": "GK",
+          "name": "JERMINE MITCHELL",
+          "dateOfBirth": "25.04.2008",
+          "club": "SANTOS FC (GUY)",
+          "nationality": "Guyana",
+          "flag": "🇬🇾"
+        }
+      ]
+    },
+    {
+      "country": "Haiti",
+      "flag": "🇭🇹",
+      "callupType": "Men U20",
+      "competition": "2026 Concacaf U20 Qualifiers",
+      "players": [
+        {
+          "number": 1,
+          "position": "GK",
+          "name": "CARLOS BRE",
+          "dateOfBirth": "12.01.2008",
+          "club": "UNATTACHED (HAI)",
+          "nationality": "Haiti",
+          "flag": "🇭🇹"
+        },
+        {
+          "number": 2,
+          "position": "DF",
+          "name": "ALCIME ARTHUR",
+          "dateOfBirth": "11.02.2008",
+          "club": "LES CAYES FC (HAI)",
+          "nationality": "Haiti",
+          "flag": "🇭🇹"
+        },
+        {
+          "number": 3,
+          "position": "DF",
+          "name": "STANLEY VOLCIN",
+          "dateOfBirth": "28.12.2007",
+          "club": "UNATTACHED (HAI)",
+          "nationality": "Haiti",
+          "flag": "🇭🇹"
+        },
+        {
+          "number": 4,
+          "position": "DF",
+          "name": "TANIS MARCKIDENS",
+          "dateOfBirth": "20.04.2007",
+          "club": "AS CAPOISE (HAI)",
+          "nationality": "Haiti",
+          "flag": "🇭🇹"
+        },
+        {
+          "number": 5,
+          "position": "MF",
+          "name": "MIGUEL JOSEPH",
+          "dateOfBirth": "14.09.2009",
+          "club": "MOUNT PLEASANT FC (JAM)",
+          "nationality": "Haiti",
+          "flag": "🇭🇹"
+        },
+        {
+          "number": 6,
+          "position": "MF",
+          "name": "JOSUÉ ANGLADE",
+          "dateOfBirth": "22.10.2008",
+          "club": "CAVALY AS (HAI)",
+          "nationality": "Haiti",
+          "flag": "🇭🇹"
+        },
+        {
+          "number": 7,
+          "position": "FW",
+          "name": "ELIKENSON JEAN",
+          "dateOfBirth": "06.06.2007",
+          "club": "UNATTACHED (HAI)",
+          "nationality": "Haiti",
+          "flag": "🇭🇹"
+        },
+        {
+          "number": 8,
+          "position": "MF",
+          "name": "RAMY FABILUS",
+          "dateOfBirth": "27.09.2008",
+          "club": "UNATTACHED (HAI)",
+          "nationality": "Haiti",
+          "flag": "🇭🇹"
+        },
+        {
+          "number": 9,
+          "position": "FW",
+          "name": "CLAVENS EXANTUS",
+          "dateOfBirth": "21.06.2008",
+          "club": "UNATTACHED (HAI)",
+          "nationality": "Haiti",
+          "flag": "🇭🇹"
+        },
+        {
+          "number": 10,
+          "position": "FW",
+          "name": "FRANCO CELESTIN",
+          "dateOfBirth": "20.12.2008",
+          "club": "MOUNT PLEASANT",
+          "nationality": "Haiti",
+          "flag": "🇭🇹"
+        },
+        {
+          "number": 11,
+          "position": "FW",
+          "name": "EMERSON LAISSE",
+          "dateOfBirth": "19.08.2009",
+          "club": "MT. PLEASANT FA (JAM)",
+          "nationality": "Haiti",
+          "flag": "🇭🇹"
+        },
+        {
+          "number": 12,
+          "position": "GK",
+          "name": "GUIVENSON JEAN PHILIPPE",
+          "dateOfBirth": "24.03.2007",
+          "club": "UNATTACHED (HAI)",
+          "nationality": "Haiti",
+          "flag": "🇭🇹"
+        },
+        {
+          "number": 13,
+          "position": "MF",
+          "name": "JOHN PETER CHARLES",
+          "dateOfBirth": "16.11.2008",
+          "club": "UNATTACHED (HAI)",
+          "nationality": "Haiti",
+          "flag": "🇭🇹"
+        },
+        {
+          "number": 14,
+          "position": "DF",
+          "name": "DIEUVENS RESIL",
+          "dateOfBirth": "05.01.2008",
+          "club": "VIOLETTE AC (HAI)",
+          "nationality": "Haiti",
+          "flag": "🇭🇹"
+        },
+        {
+          "number": 15,
+          "position": "DF",
+          "name": "MIKENLOVE JEAN JULES",
+          "dateOfBirth": "23.11.2008",
+          "club": "UNATTACHED (HAI)",
+          "nationality": "Haiti",
+          "flag": "🇭🇹"
+        },
+        {
+          "number": 16,
+          "position": "MF",
+          "name": "VLADIMIR SYLVAIN",
+          "dateOfBirth": "28.02.2007",
+          "club": "UNATTACHED (HAI)",
+          "nationality": "Haiti",
+          "flag": "🇭🇹"
+        },
+        {
+          "number": 17,
+          "position": "DF",
+          "name": "MEDINEL ZAMOR",
+          "dateOfBirth": "01.01.2008",
+          "club": "LEGAZ (HAI)",
+          "nationality": "Haiti",
+          "flag": "🇭🇹"
+        },
+        {
+          "number": 18,
+          "position": "FW",
+          "name": "NIKOLAI PIERRE",
+          "dateOfBirth": "01.04.2008",
+          "club": "ORLANDO CITY ACADEMY",
+          "nationality": "Haiti",
+          "flag": "🇭🇹"
+        },
+        {
+          "number": 19,
+          "position": "FW",
+          "name": "DABENS JACQUET",
+          "dateOfBirth": "05.01.2008",
+          "club": "AIGLE NOIR AC (HAI)",
+          "nationality": "Haiti",
+          "flag": "🇭🇹"
+        },
+        {
+          "number": 20,
+          "position": "FW",
+          "name": "WILL LECONTE",
+          "dateOfBirth": "23.12.2008",
+          "club": "UNATTACHED (HAI)",
+          "nationality": "Haiti",
+          "flag": "🇭🇹"
+        },
+        {
+          "number": 21,
+          "position": "GK",
+          "name": "TONY ALGARIN",
+          "dateOfBirth": "20.01.2007",
+          "club": "FC METZ (FRA)",
+          "nationality": "Haiti",
+          "flag": "🇭🇹"
+        }
+      ]
+    },
+    {
+      "country": "Jamaica",
+      "flag": "🇯🇲",
+      "callupType": "Men U20",
+      "competition": "2026 Concacaf U20 Qualifiers",
+      "players": [
+        {
+          "number": 1,
+          "position": "GK",
+          "name": "JOSHUA GRANT",
+          "dateOfBirth": "27.05.2007",
+          "club": "FC NAPLES (USA)",
+          "nationality": "Jamaica",
+          "flag": "🇯🇲"
+        },
+        {
+          "number": 2,
+          "position": "DF",
+          "name": "MARLON VAN DE WETERING",
+          "dateOfBirth": "26.11.2007",
+          "club": "FC EINDHOVEN (NED)",
+          "nationality": "Jamaica",
+          "flag": "🇯🇲"
+        },
+        {
+          "number": 3,
+          "position": "DF",
+          "name": "EARL DENNIS",
+          "dateOfBirth": "26.02.2008",
+          "club": "MT. PLEASANT FA (JAM)",
+          "nationality": "Jamaica",
+          "flag": "🇯🇲"
+        },
+        {
+          "number": 4,
+          "position": "DF",
+          "name": "DESHAWN TALBERT",
+          "dateOfBirth": "17.02.2007",
+          "club": "CAVALIER FC (JAM)",
+          "nationality": "Jamaica",
+          "flag": "🇯🇲"
+        },
+        {
+          "number": 5,
+          "position": "FW",
+          "name": "CAI MCLEAN",
+          "dateOfBirth": "27.06.2008",
+          "club": "INTER MIAMI CF (USA)",
+          "nationality": "Jamaica",
+          "flag": "🇯🇲"
+        },
+        {
+          "number": 6,
+          "position": "MF",
+          "name": "OWEN JUMPP",
+          "dateOfBirth": "01.09.2008",
+          "club": "MT. PLEASANT FA (JAM)",
+          "nationality": "Jamaica",
+          "flag": "🇯🇲"
+        },
+        {
+          "number": 7,
+          "position": "DF",
+          "name": "JAHMARIE NOLAN",
+          "dateOfBirth": "11.11.2009",
+          "club": "TORONTO FC ACADEMY",
+          "nationality": "Jamaica",
+          "flag": "🇯🇲"
+        },
+        {
+          "number": 8,
+          "position": "MF",
+          "name": "JAHEEM DOUGLAS",
+          "dateOfBirth": "21.08.2008",
+          "club": "MT. PLEASANT FA (JAM)",
+          "nationality": "Jamaica",
+          "flag": "🇯🇲"
+        },
+        {
+          "number": 9,
+          "position": "FW",
+          "name": "GIOVANNI TAYLOR",
+          "dateOfBirth": "09.01.2008",
+          "club": "ARNETT GARDENS FC (JAM)",
+          "nationality": "Jamaica",
+          "flag": "🇯🇲"
+        },
+        {
+          "number": 10,
+          "position": "MF",
+          "name": "JABARIE HOWELL",
+          "dateOfBirth": "02.12.2007",
+          "club": "MOUNT PLEASANT",
+          "nationality": "Jamaica",
+          "flag": "🇯🇲"
+        },
+        {
+          "number": 11,
+          "position": "MF",
+          "name": "JAMOY DENNIS",
+          "dateOfBirth": "21.06.2007",
+          "club": "CAVALIER FC (JAM)",
+          "nationality": "Jamaica",
+          "flag": "🇯🇲"
+        },
+        {
+          "number": 12,
+          "position": "FW",
+          "name": "SEAN LEIGHTON",
+          "dateOfBirth": "17.09.2008",
+          "club": "PHOENIX CHAPELTON",
+          "nationality": "Jamaica",
+          "flag": "🇯🇲"
+        },
+        {
+          "number": 13,
+          "position": "GK",
+          "name": "JOHNOI STEADMAN",
+          "dateOfBirth": "31.12.2008",
+          "club": "UNATTACHED (JAM)",
+          "nationality": "Jamaica",
+          "flag": "🇯🇲"
+        },
+        {
+          "number": 14,
+          "position": "DF",
+          "name": "DUWAYNE BURGHER",
+          "dateOfBirth": "07.07.2009",
+          "club": "WATERHOUSE FC (JAM)",
+          "nationality": "Jamaica",
+          "flag": "🇯🇲"
+        },
+        {
+          "number": 15,
+          "position": "FW",
+          "name": "ODANE WILBERFORCE",
+          "dateOfBirth": "03.01.2007",
+          "club": "CAVALIER FC (JAM)",
+          "nationality": "Jamaica",
+          "flag": "🇯🇲"
+        },
+        {
+          "number": 16,
+          "position": "DF",
+          "name": "RAEQUAN CAMPBELL-DENNIS",
+          "dateOfBirth": "30.01.2008",
+          "club": "TORONTO FC ACADEMY",
+          "nationality": "Jamaica",
+          "flag": "🇯🇲"
+        },
+        {
+          "number": 17,
+          "position": "MF",
+          "name": "SANTANA HEADLEY",
+          "dateOfBirth": "04.10.2007",
+          "club": "PORTMORE UNITED FC",
+          "nationality": "Jamaica",
+          "flag": "🇯🇲"
+        },
+        {
+          "number": 18,
+          "position": "DF",
+          "name": "BRANDON BENT",
+          "dateOfBirth": "24.01.2007",
+          "club": "MIAMI FC (USA)",
+          "nationality": "Jamaica",
+          "flag": "🇯🇲"
+        },
+        {
+          "number": 19,
+          "position": "MF",
+          "name": "OREL MILLER",
+          "dateOfBirth": "19.02.2008",
+          "club": "PORTMORE UNITED FC",
+          "nationality": "Jamaica",
+          "flag": "🇯🇲"
+        },
+        {
+          "number": 20,
+          "position": "DF",
+          "name": "CLAVER NUGENT",
+          "dateOfBirth": "26.02.2008",
+          "club": "MT. PLEASANT FA (JAM)",
+          "nationality": "Jamaica",
+          "flag": "🇯🇲"
+        },
+        {
+          "number": 21,
+          "position": "GK",
+          "name": "CARLYLE TINGLIN",
+          "dateOfBirth": "03.12.2008",
+          "club": "MONTEGO BAY UNITED FC",
+          "nationality": "Jamaica",
+          "flag": "🇯🇲"
+        }
+      ]
+    },
+    {
+      "country": "Saint Vincent and the Grenadines",
+      "flag": "🇻🇨",
+      "callupType": "Men U20",
+      "competition": "2026 Concacaf U20 Qualifiers",
+      "players": [
+        {
+          "number": 1,
+          "position": "GK",
+          "name": "DAVID BUTLER",
+          "dateOfBirth": "20.05.2009",
+          "club": "BLOSSOM UNITED (VIN)",
+          "nationality": "Saint Vincent and the Grenadines",
+          "flag": "🇻🇨"
+        },
+        {
+          "number": 2,
+          "position": "FW",
+          "name": "DAROY MCDOWALL",
+          "dateOfBirth": "21.03.2008",
+          "club": "MONA HIGH SCHOOL (JAM)",
+          "nationality": "Saint Vincent and the Grenadines",
+          "flag": "🇻🇨"
+        },
+        {
+          "number": 3,
+          "position": "DF",
+          "name": "LAZARO LYNCH",
+          "dateOfBirth": "26.06.2007",
+          "club": "SYSTEM 3 (VIN)",
+          "nationality": "Saint Vincent and the Grenadines",
+          "flag": "🇻🇨"
+        },
+        {
+          "number": 4,
+          "position": "MF",
+          "name": "ZIBEON CUNNINGHAM",
+          "dateOfBirth": "04.02.2008",
+          "club": "SYSTEM 3 (VIN)",
+          "nationality": "Saint Vincent and the Grenadines",
+          "flag": "🇻🇨"
+        },
+        {
+          "number": 5,
+          "position": "DF",
+          "name": "MALACHI MCMASTER",
+          "dateOfBirth": "01.04.2008",
+          "club": "ST.ELIZABETH TECHNICAL",
+          "nationality": "Saint Vincent and the Grenadines",
+          "flag": "🇻🇨"
+        },
+        {
+          "number": 6,
+          "position": "FW",
+          "name": "MATTHEW JOSEPH",
+          "dateOfBirth": "10.10.2008",
+          "club": "UNATTACHED (VIN), SIR",
+          "nationality": "Saint Vincent and the Grenadines",
+          "flag": "🇻🇨"
+        },
+        {
+          "number": 7,
+          "position": "MF",
+          "name": "GABRIEL DOYLE",
+          "dateOfBirth": "06.07.2007",
+          "club": "RICHMOND HILL UTD (VIN)",
+          "nationality": "Saint Vincent and the Grenadines",
+          "flag": "🇻🇨"
+        },
+        {
+          "number": 8,
+          "position": "DF",
+          "name": "ELIJAH NIEL",
+          "dateOfBirth": "18.01.2008",
+          "club": "RICHMOND HILL SC (CAN)",
+          "nationality": "Saint Vincent and the Grenadines",
+          "flag": "🇻🇨"
+        },
+        {
+          "number": 9,
+          "position": "MF",
+          "name": "TYRIQUE CLARKE",
+          "dateOfBirth": "01.01.2008",
+          "club": "INTER TORONTO FC (CAN),",
+          "nationality": "Saint Vincent and the Grenadines",
+          "flag": "🇻🇨"
+        },
+        {
+          "number": 10,
+          "position": "MF",
+          "name": "CAMPDEN BISHOP",
+          "dateOfBirth": "08.04.2008",
+          "club": "CAROLINA CORE FC (USA)",
+          "nationality": "Saint Vincent and the Grenadines",
+          "flag": "🇻🇨"
+        },
+        {
+          "number": 11,
+          "position": "DF",
+          "name": "SHAQUAN HOOPER",
+          "dateOfBirth": "11.09.2008",
+          "club": "JEBELLES FC (VIN)",
+          "nationality": "Saint Vincent and the Grenadines",
+          "flag": "🇻🇨"
+        },
+        {
+          "number": 12,
+          "position": "FW",
+          "name": "TYLER LEWIS",
+          "dateOfBirth": "07.01.2008",
+          "club": "BLOSSOM UNITED (VIN)",
+          "nationality": "Saint Vincent and the Grenadines",
+          "flag": "🇻🇨"
+        },
+        {
+          "number": 13,
+          "position": "MF",
+          "name": "LOIC PAUL",
+          "dateOfBirth": "27.12.2007",
+          "club": "UNATTACHED (VIN)",
+          "nationality": "Saint Vincent and the Grenadines",
+          "flag": "🇻🇨"
+        },
+        {
+          "number": 14,
+          "position": "DF",
+          "name": "DIMITRI THOMAS",
+          "dateOfBirth": "01.03.2007",
+          "club": "JEBELLES FC (VIN)",
+          "nationality": "Saint Vincent and the Grenadines",
+          "flag": "🇻🇨"
+        },
+        {
+          "number": 15,
+          "position": "MF",
+          "name": "JOENALDO PAYNE",
+          "dateOfBirth": "10.11.2008",
+          "club": "MONA HIGH SCHOOL (JAM)",
+          "nationality": "Saint Vincent and the Grenadines",
+          "flag": "🇻🇨"
+        },
+        {
+          "number": 16,
+          "position": "DF",
+          "name": "DESHAD SIMMONS",
+          "dateOfBirth": "05.12.2007",
+          "club": "JEBELLES FC (VIN)",
+          "nationality": "Saint Vincent and the Grenadines",
+          "flag": "🇻🇨"
+        },
+        {
+          "number": 17,
+          "position": "MF",
+          "name": "TAARIQ SMALL",
+          "dateOfBirth": "10.10.2007",
+          "club": "JEBELLES FC (VIN)",
+          "nationality": "Saint Vincent and the Grenadines",
+          "flag": "🇻🇨"
+        },
+        {
+          "number": 18,
+          "position": "MF",
+          "name": "EMERSON STOPLER",
+          "dateOfBirth": "30.07.2007",
+          "club": "EMORY & HENRY",
+          "nationality": "Saint Vincent and the Grenadines",
+          "flag": "🇻🇨"
+        },
+        {
+          "number": 19,
+          "position": "DF",
+          "name": "DARIUS HUMPHREY",
+          "dateOfBirth": "13.11.2007",
+          "club": "UNATTACHED (VIN)",
+          "nationality": "Saint Vincent and the Grenadines",
+          "flag": "🇻🇨"
+        },
+        {
+          "number": 20,
+          "position": "GK",
+          "name": "DONELL THOMAS",
+          "dateOfBirth": "09.04.2008",
+          "club": "CITY FC (TRI)",
+          "nationality": "Saint Vincent and the Grenadines",
+          "flag": "🇻🇨"
+        },
+        {
+          "number": 21,
+          "position": "GK",
+          "name": "DINESH GRANT",
+          "dateOfBirth": "10.06.2009",
+          "club": "SYSTEM 3 FC (VIN)",
+          "nationality": "Saint Vincent and the Grenadines",
+          "flag": "🇻🇨"
+        }
+      ]
+    },
+    {
+      "country": "Saint Lucia",
+      "flag": "🇱🇨",
+      "callupType": "Men U20",
+      "competition": "2026 Concacaf U20 Qualifiers",
+      "players": [
+        {
+          "number": 1,
+          "position": "GK",
+          "name": "A'DEE GERME",
+          "dateOfBirth": "28.01.2008",
+          "club": "UPTOWN REBELS SC (LCA)",
+          "nationality": "Saint Lucia",
+          "flag": "🇱🇨"
+        },
+        {
+          "number": 2,
+          "position": "DF",
+          "name": "JOSHUA GEORGE",
+          "dateOfBirth": "09.07.2007",
+          "club": "UNATTACHED (LCA)",
+          "nationality": "Saint Lucia",
+          "flag": "🇱🇨"
+        },
+        {
+          "number": 3,
+          "position": "DF",
+          "name": "MEKHI PHILLIP",
+          "dateOfBirth": "15.05.2007",
+          "club": "UNATTACHED (LCA)",
+          "nationality": "Saint Lucia",
+          "flag": "🇱🇨"
+        },
+        {
+          "number": 4,
+          "position": "DF",
+          "name": "ROHAN VITALIS",
+          "dateOfBirth": "08.01.2008",
+          "club": "UNATTACHED (LCA)",
+          "nationality": "Saint Lucia",
+          "flag": "🇱🇨"
+        },
+        {
+          "number": 5,
+          "position": "DF",
+          "name": "ALFRED HIPPOLYTE",
+          "dateOfBirth": "23.06.2007",
+          "club": "UNATTACHED (LCA)",
+          "nationality": "Saint Lucia",
+          "flag": "🇱🇨"
+        },
+        {
+          "number": 6,
+          "position": "MF",
+          "name": "ALEX DEVAUX",
+          "dateOfBirth": "29.06.2008",
+          "club": "VALLEY SOCCER ACADEMY",
+          "nationality": "Saint Lucia",
+          "flag": "🇱🇨"
+        },
+        {
+          "number": 7,
+          "position": "MF",
+          "name": "NIYEL FONTENELLE",
+          "dateOfBirth": "08.07.2007",
+          "club": "UNATTACHED (LCA)",
+          "nationality": "Saint Lucia",
+          "flag": "🇱🇨"
+        },
+        {
+          "number": 9,
+          "position": "MF",
+          "name": "EYMANI BUTCHER",
+          "dateOfBirth": "25.12.2007",
+          "club": "BLACK PANTHERS (LCA)",
+          "nationality": "Saint Lucia",
+          "flag": "🇱🇨"
+        },
+        {
+          "number": 10,
+          "position": "MF",
+          "name": "KEVIN BLACKSTOCK JR",
+          "dateOfBirth": "28.01.2007",
+          "club": "UNATTACHED (LCA)",
+          "nationality": "Saint Lucia",
+          "flag": "🇱🇨"
+        },
+        {
+          "number": 11,
+          "position": "FW",
+          "name": "EDRIC POPO",
+          "dateOfBirth": "17.12.2007",
+          "club": "UNATTACHED (LCA)",
+          "nationality": "Saint Lucia",
+          "flag": "🇱🇨"
+        },
+        {
+          "number": 12,
+          "position": "GK",
+          "name": "DAUNTE SAUL",
+          "dateOfBirth": "02.10.2009",
+          "club": "EL NIÑOS FC (LCA)",
+          "nationality": "Saint Lucia",
+          "flag": "🇱🇨"
+        },
+        {
+          "number": 13,
+          "position": "DF",
+          "name": "MALIK LOUIS",
+          "dateOfBirth": "21.12.2008",
+          "club": "NORTHERN UNITED ALL",
+          "nationality": "Saint Lucia",
+          "flag": "🇱🇨"
+        },
+        {
+          "number": 14,
+          "position": "FW",
+          "name": "MESSIAH PINEL",
+          "dateOfBirth": "03.08.2007",
+          "club": "UNATTACHED (LCA)",
+          "nationality": "Saint Lucia",
+          "flag": "🇱🇨"
+        },
+        {
+          "number": 15,
+          "position": "DF",
+          "name": "MICHAEL JUSTIN",
+          "dateOfBirth": "04.10.2008",
+          "club": "UNATTACHED (LCA)",
+          "nationality": "Saint Lucia",
+          "flag": "🇱🇨"
+        },
+        {
+          "number": 16,
+          "position": "MF",
+          "name": "DERVAJ EDWARD",
+          "dateOfBirth": "27.09.2008",
+          "club": "NEW GENERATION",
+          "nationality": "Saint Lucia",
+          "flag": "🇱🇨"
+        },
+        {
+          "number": 17,
+          "position": "MF",
+          "name": "MARCUS PAUL",
+          "dateOfBirth": "04.12.2007",
+          "club": "UNATTACHED (LCA)",
+          "nationality": "Saint Lucia",
+          "flag": "🇱🇨"
+        },
+        {
+          "number": 18,
+          "position": "FW",
+          "name": "TASHAWN WALTER",
+          "dateOfBirth": "29.01.2008",
+          "club": "UPTOWN REBELS SC (LCA)",
+          "nationality": "Saint Lucia",
+          "flag": "🇱🇨"
+        },
+        {
+          "number": 19,
+          "position": "DF",
+          "name": "AUNARGE MAXWELL",
+          "dateOfBirth": "20.09.2008",
+          "club": "UNATTACHED (LCA)",
+          "nationality": "Saint Lucia",
+          "flag": "🇱🇨"
+        },
+        {
+          "number": 20,
+          "position": "MF",
+          "name": "KALLIS MONDESIR",
+          "dateOfBirth": "14.04.2007",
+          "club": "CANARIES (LCA)",
+          "nationality": "Saint Lucia",
+          "flag": "🇱🇨"
+        },
+        {
+          "number": 21,
+          "position": "GK",
+          "name": "TYRELL VIDAL",
+          "dateOfBirth": "04.01.2008",
+          "club": "NORTHERN UNITED ALL",
+          "nationality": "Saint Lucia",
+          "flag": "🇱🇨"
+        }
+      ]
+    },
+    {
+      "country": "Suriname",
+      "flag": "🇸🇷",
+      "callupType": "Men U20",
+      "competition": "2026 Concacaf U20 Qualifiers",
+      "players": [
+        {
+          "number": 1,
+          "position": "GK",
+          "name": "TYRON CHAAR",
+          "dateOfBirth": "10.08.2007",
+          "club": "FC VOLENDAM (NED)",
+          "nationality": "Suriname",
+          "flag": "🇸🇷"
+        },
+        {
+          "number": 2,
+          "position": "DF",
+          "name": "KY-MANI LELIENDAL",
+          "dateOfBirth": "28.11.2007",
+          "club": "UNATTACHED (SUR)",
+          "nationality": "Suriname",
+          "flag": "🇸🇷"
+        },
+        {
+          "number": 3,
+          "position": "DF",
+          "name": "JAYDEN SITABI",
+          "dateOfBirth": "29.04.2007",
+          "club": "UNATTACHED (SUR)",
+          "nationality": "Suriname",
+          "flag": "🇸🇷"
+        },
+        {
+          "number": 4,
+          "position": "DF",
+          "name": "JOSIAS ELGINE",
+          "dateOfBirth": "23.12.2007",
+          "club": "UNATTACHED (SUR)",
+          "nationality": "Suriname",
+          "flag": "🇸🇷"
+        },
+        {
+          "number": 5,
+          "position": "DF",
+          "name": "CHAVERNO EDELSTEEN",
+          "dateOfBirth": "16.09.2007",
+          "club": "TRANSVAAL (SUR)",
+          "nationality": "Suriname",
+          "flag": "🇸🇷"
+        },
+        {
+          "number": 6,
+          "position": "FW",
+          "name": "ROJENDRO OUDSTEN",
+          "dateOfBirth": "12.11.2007",
+          "club": "SC TELSTAR (NED)",
+          "nationality": "Suriname",
+          "flag": "🇸🇷"
+        },
+        {
+          "number": 7,
+          "position": "FW",
+          "name": "JEREMIAH NIRK",
+          "dateOfBirth": "07.03.2008",
+          "club": "UNATTACHED (SUR)",
+          "nationality": "Suriname",
+          "flag": "🇸🇷"
+        },
+        {
+          "number": 8,
+          "position": "MF",
+          "name": "QUINCY MAC DONALD",
+          "dateOfBirth": "24.12.2007",
+          "club": "UNATTACHED (SUR)",
+          "nationality": "Suriname",
+          "flag": "🇸🇷"
+        },
+        {
+          "number": 9,
+          "position": "FW",
+          "name": "GINO GROOTFAAM",
+          "dateOfBirth": "05.11.2007",
+          "club": "UNATTACHED (SUR)",
+          "nationality": "Suriname",
+          "flag": "🇸🇷"
+        },
+        {
+          "number": 10,
+          "position": "FW",
+          "name": "XAVI DORS",
+          "dateOfBirth": "03.08.2007",
+          "club": "UNATTACHED (SUR)",
+          "nationality": "Suriname",
+          "flag": "🇸🇷"
+        },
+        {
+          "number": 11,
+          "position": "FW",
+          "name": "WILSON MILAN",
+          "dateOfBirth": "22.12.2007",
+          "club": "UNATTACHED (SUR)",
+          "nationality": "Suriname",
+          "flag": "🇸🇷"
+        },
+        {
+          "number": 12,
+          "position": "FW",
+          "name": "JENAIRO LIGEON",
+          "dateOfBirth": "23.01.2007",
+          "club": "ROBINHOOD (SUR)",
+          "nationality": "Suriname",
+          "flag": "🇸🇷"
+        },
+        {
+          "number": 13,
+          "position": "GK",
+          "name": "JERALDO POETISI",
+          "dateOfBirth": "06.07.2007",
+          "club": "INTER MOENGO TAPOE",
+          "nationality": "Suriname",
+          "flag": "🇸🇷"
+        },
+        {
+          "number": 14,
+          "position": "FW",
+          "name": "JEMAIRO DJOE",
+          "dateOfBirth": "25.10.2007",
+          "club": "INTER MOENGO TAPOE",
+          "nationality": "Suriname",
+          "flag": "🇸🇷"
+        },
+        {
+          "number": 15,
+          "position": "DF",
+          "name": "DISTENY GALI",
+          "dateOfBirth": "28.09.2007",
+          "club": "VOORWAARTS (SUR)",
+          "nationality": "Suriname",
+          "flag": "🇸🇷"
+        },
+        {
+          "number": 16,
+          "position": "DF",
+          "name": "UCHENSKY PIENAS",
+          "dateOfBirth": "01.01.2008",
+          "club": "TRANSVAAL (SUR)",
+          "nationality": "Suriname",
+          "flag": "🇸🇷"
+        },
+        {
+          "number": 17,
+          "position": "DF",
+          "name": "NAIEM HELSTONE",
+          "dateOfBirth": "20.04.2007",
+          "club": "ROBINHOOD (SUR)",
+          "nationality": "Suriname",
+          "flag": "🇸🇷"
+        },
+        {
+          "number": 18,
+          "position": "MF",
+          "name": "MICHEL DOEKOE",
+          "dateOfBirth": "06.04.2008",
+          "club": "BROKI (SUR)",
+          "nationality": "Suriname",
+          "flag": "🇸🇷"
+        },
+        {
+          "number": 19,
+          "position": "FW",
+          "name": "ADENTI TAYLOR",
+          "dateOfBirth": "17.05.2008",
+          "club": "VOORWAARTS (SUR)",
+          "nationality": "Suriname",
+          "flag": "🇸🇷"
+        },
+        {
+          "number": 20,
+          "position": "MF",
+          "name": "AFTAAB MADAR",
+          "dateOfBirth": "06.02.2008",
+          "club": "TRANSVAAL (SUR)",
+          "nationality": "Suriname",
+          "flag": "🇸🇷"
+        },
+        {
+          "number": 21,
+          "position": "GK",
+          "name": "SHOMARO DE SWITT",
+          "dateOfBirth": "11.02.2007",
+          "club": "UNATTACHED (SUR)",
+          "nationality": "Suriname",
+          "flag": "🇸🇷"
+        }
+      ]
+    },
+    {
+      "country": "Trinidad and Tobago",
+      "flag": "🇹🇹",
+      "callupType": "Men U20",
+      "competition": "2026 Concacaf U20 Qualifiers",
+      "players": [
+        {
+          "number": 1,
+          "position": "GK",
+          "name": "BRYAN GAFIUK",
+          "dateOfBirth": "03.04.2007",
+          "club": "UNIVERSITY OF",
+          "nationality": "Trinidad and Tobago",
+          "flag": "🇹🇹"
+        },
+        {
+          "number": 2,
+          "position": "DF",
+          "name": "JEREMY MELONEY",
+          "dateOfBirth": "21.04.2008",
+          "club": "TSF ACADEMY (USA)",
+          "nationality": "Trinidad and Tobago",
+          "flag": "🇹🇹"
+        },
+        {
+          "number": 3,
+          "position": "DF",
+          "name": "SHERIDAN MC NISH",
+          "dateOfBirth": "25.06.2008",
+          "club": "NEW ENGLAND",
+          "nationality": "Trinidad and Tobago",
+          "flag": "🇹🇹"
+        },
+        {
+          "number": 4,
+          "position": "DF",
+          "name": "ADAM PIERRE",
+          "dateOfBirth": "18.02.2008",
+          "club": "CENTRAL FC (TRI)",
+          "nationality": "Trinidad and Tobago",
+          "flag": "🇹🇹"
+        },
+        {
+          "number": 5,
+          "position": "DF",
+          "name": "JAYDON CAPRIETTA",
+          "dateOfBirth": "16.06.2008",
+          "club": "CLUB SANDO FC (TRI)",
+          "nationality": "Trinidad and Tobago",
+          "flag": "🇹🇹"
+        },
+        {
+          "number": 6,
+          "position": "MF",
+          "name": "CADEN TRESTRAIL",
+          "dateOfBirth": "08.01.2008",
+          "club": "SAN JUAN JABLOTEH (TRI)",
+          "nationality": "Trinidad and Tobago",
+          "flag": "🇹🇹"
+        },
+        {
+          "number": 7,
+          "position": "FW",
+          "name": "MALACHI WEBB",
+          "dateOfBirth": "06.01.2007",
+          "club": "SAN JUAN JABLOTEH (TRI)",
+          "nationality": "Trinidad and Tobago",
+          "flag": "🇹🇹"
+        },
+        {
+          "number": 8,
+          "position": "DF",
+          "name": "JOSIAH OCHOA",
+          "dateOfBirth": "08.01.2007",
+          "club": "POINT FORTIN ACADEMY",
+          "nationality": "Trinidad and Tobago",
+          "flag": "🇹🇹"
+        },
+        {
+          "number": 9,
+          "position": "FW",
+          "name": "PHILLIP NELSON",
+          "dateOfBirth": "31.05.2008",
+          "club": "DEFENCE FORCE FC (TRI)",
+          "nationality": "Trinidad and Tobago",
+          "flag": "🇹🇹"
+        },
+        {
+          "number": 10,
+          "position": "MF",
+          "name": "DERREL GARCIA",
+          "dateOfBirth": "03.03.2007",
+          "club": "SAN JUAN JABLOTEH (TRI)",
+          "nationality": "Trinidad and Tobago",
+          "flag": "🇹🇹"
+        },
+        {
+          "number": 11,
+          "position": "DF",
+          "name": "CHAZ WILLIAMS",
+          "dateOfBirth": "29.06.2008",
+          "club": "INTER MIAMI CF (USA)",
+          "nationality": "Trinidad and Tobago",
+          "flag": "🇹🇹"
+        },
+        {
+          "number": 12,
+          "position": "MF",
+          "name": "COLIN XAVIER JOSEPH",
+          "dateOfBirth": "07.08.2008",
+          "club": "SOCCER INSTITUTE OF",
+          "nationality": "Trinidad and Tobago",
+          "flag": "🇹🇹"
+        },
+        {
+          "number": 13,
+          "position": "DF",
+          "name": "LYSHAUN MORRIS",
+          "dateOfBirth": "08.02.2007",
+          "club": "KALONJI SOCCER ACADEMY",
+          "nationality": "Trinidad and Tobago",
+          "flag": "🇹🇹"
+        },
+        {
+          "number": 14,
+          "position": "DF",
+          "name": "TALAN MC MILLAN",
+          "dateOfBirth": "31.05.2008",
+          "club": "TALENT PROJEKT (GER)",
+          "nationality": "Trinidad and Tobago",
+          "flag": "🇹🇹"
+        },
+        {
+          "number": 15,
+          "position": "MF",
+          "name": "JADON MC SHINE",
+          "dateOfBirth": "06.04.2007",
+          "club": "SAN JUAN JABLOTEH (TRI)",
+          "nationality": "Trinidad and Tobago",
+          "flag": "🇹🇹"
+        },
+        {
+          "number": 16,
+          "position": "DF",
+          "name": "JADEN CHAN TACK",
+          "dateOfBirth": "14.12.2007",
+          "club": "COLORADO RAPIDS (USA)",
+          "nationality": "Trinidad and Tobago",
+          "flag": "🇹🇹"
+        },
+        {
+          "number": 17,
+          "position": "MF",
+          "name": "DOMINIC JOSEPH",
+          "dateOfBirth": "26.06.2008",
+          "club": "VANCOUVER FC (CAN)",
+          "nationality": "Trinidad and Tobago",
+          "flag": "🇹🇹"
+        },
+        {
+          "number": 18,
+          "position": "GK",
+          "name": "JADON-PAUL ALEXANDER",
+          "dateOfBirth": "04.12.2007",
+          "club": "CALEDONIA AIA LIMITED",
+          "nationality": "Trinidad and Tobago",
+          "flag": "🇹🇹"
+        },
+        {
+          "number": 19,
+          "position": "FW",
+          "name": "JOSIAH KALLICHARAN",
+          "dateOfBirth": "01.02.2008",
+          "club": "SWANSEA CITY (ENG)",
+          "nationality": "Trinidad and Tobago",
+          "flag": "🇹🇹"
+        },
+        {
+          "number": 20,
+          "position": "FW",
+          "name": "GIOVANNI HOSPEDALES",
+          "dateOfBirth": "27.10.2010",
+          "club": "ST AUGUSTINE SEC (TRI)",
+          "nationality": "Trinidad and Tobago",
+          "flag": "🇹🇹"
+        },
+        {
+          "number": 21,
+          "position": "GK",
+          "name": "SYLVON THEOPHILUS",
+          "dateOfBirth": "22.02.2007",
+          "club": "ST ANTHONY'S COLLEGE",
+          "nationality": "Trinidad and Tobago",
+          "flag": "🇹🇹"
+        }
+      ]
+    }
+  ]
+}

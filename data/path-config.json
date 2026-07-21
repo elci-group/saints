@@ -1,0 +1,38 @@
+{
+  "version": "1.0.0",
+  "destinationByCountry": {
+    "Saint Vincent and the Grenadines": "SVD", "Grenada": "GND", "Saint Lucia": "UVF",
+    "Dominica": "DOM", "Antigua and Barbuda": "ANU", "Barbados": "BGI", "Guyana": "GEO",
+    "Jamaica": "KIN", "Trinidad and Tobago": "POS", "Haiti": "PAP", "Curaçao": "CUR", "Suriname": "PBM"
+  },
+  "clubCountryAirport": {
+    "VIN": "SVD", "GRN": "GND", "LCA": "UVF", "DMA": "DOM", "ATG": "ANU", "BRB": "BGI",
+    "GUY": "GEO", "JAM": "KIN", "TRI": "POS", "HAI": "PAP", "CUW": "CUR", "SUR": "PBM",
+    "ENG": "LHR", "NED": "AMS", "FRA": "CDG", "ESP": "MAD", "GER": "FRA", "USA": "MIA",
+    "CAN": "YYZ", "UAE": "DXB"
+  },
+  "airports": [
+    ["SVD", "Argyle International", 13.1567, -61.1499], ["BGI", "Grantley Adams", 13.0746, -59.4925],
+    ["POS", "Piarco International", 10.5954, -61.3372], ["MIA", "Miami International", 25.7959, -80.2870],
+    ["LHR", "London Heathrow", 51.4700, -0.4543], ["AMS", "Amsterdam Schiphol", 52.3105, 4.7683],
+    ["CDG", "Paris Charles de Gaulle", 49.0097, 2.5479], ["MAD", "Madrid Barajas", 40.4983, -3.5676],
+    ["FRA", "Frankfurt Airport", 50.0379, 8.5622], ["YYZ", "Toronto Pearson", 43.6777, -79.6248],
+    ["DXB", "Dubai International", 25.2532, 55.3657], ["GND", "Maurice Bishop", 12.0042, -61.7862],
+    ["UVF", "Hewanorra International", 13.7332, -60.9526], ["DOM", "Douglas-Charles", 15.5470, -61.3000],
+    ["ANU", "V. C. Bird International", 17.1367, -61.7927], ["GEO", "Cheddi Jagan", 6.4986, -58.2541],
+    ["KIN", "Norman Manley", 17.9357, -76.7875], ["PAP", "Toussaint Louverture", 18.5800, -72.2925],
+    ["CUR", "Curaçao International", 12.1889, -68.9598], ["PBM", "Johan Adolf Pengel", 5.4528, -55.1878]
+  ],
+  "routes": [
+    ["SVD","BGI"],["SVD","POS"],["SVD","MIA"],["BGI","POS"],["BGI","MIA"],["BGI","LHR"],
+    ["BGI","YYZ"],["BGI","GND"],["BGI","UVF"],["BGI","DOM"],["BGI","ANU"],["BGI","GEO"],
+    ["BGI","KIN"],["BGI","PAP"],["BGI","CUR"],["BGI","PBM"],["POS","MIA"],["POS","GEO"],
+    ["POS","CUR"],["MIA","KIN"],["MIA","PAP"],["MIA","CUR"],["LHR","AMS"],["LHR","CDG"],
+    ["LHR","MAD"],["LHR","FRA"],["LHR","DXB"],["YYZ","MIA"],["AMS","CDG"],["MAD","MIA"]
+  ],
+  "flightSources": [
+    { "id": "route-model", "label": "Airport route model", "access": "local", "trust": 0.58, "ttlMs": 604800000 },
+    { "id": "amadeus", "label": "Amadeus Flight Offers", "access": "credentialled", "trust": 0.92, "ttlMs": 900000 },
+    { "id": "opensky", "label": "OpenSky observed flights", "access": "observational", "trust": 0.72, "ttlMs": 3600000 }
+  ]
+}

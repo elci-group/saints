@@ -1,0 +1,80 @@
+{
+  "version": "1.0.0",
+  "cache": {
+    "prefix": "avi-context-v1",
+    "staleWhileRevalidateMs": 86400000
+  },
+  "sources": [
+    {
+      "id": "padagonia",
+      "label": "Padagonia DB",
+      "access": "local",
+      "baseTrust": 0.78,
+      "ttlMs": 21600000,
+      "minIntervalMs": 0,
+      "metricTrust": { "physical": 0.55, "result": 0.82, "identity": 0.8 },
+      "policy": "Local structured records; available JIT."
+    },
+    {
+      "id": "svg-history",
+      "label": "SVG historical importer",
+      "access": "local",
+      "baseTrust": 0.84,
+      "ttlMs": 21600000,
+      "minIntervalMs": 0,
+      "metricTrust": { "result": 0.9, "schedule": 0.86, "travel": 0.7, "conditions": 0.82, "match-context": 0.76 },
+      "policy": "Wikipedia-led fixture archive cross-checked by year pages and enriched from dated public APIs."
+    },
+    {
+      "id": "wikipedia",
+      "label": "Wikipedia / Wikidata",
+      "access": "api",
+      "baseTrust": 0.7,
+      "ttlMs": 604800000,
+      "minIntervalMs": 1000,
+      "metricTrust": { "identity": 0.94, "competition": 0.86, "result": 0.64 },
+      "policy": "API access only; identify the client and honour cache headers."
+    },
+    {
+      "id": "bbc-sport",
+      "label": "BBC Sport",
+      "access": "licensed",
+      "baseTrust": 0.9,
+      "ttlMs": 21600000,
+      "minIntervalMs": 3000,
+      "metricTrust": { "result": 0.93, "context": 0.9, "lineup": 0.86 },
+      "policy": "Licensed or manually supplied feed; automated page scraping disabled."
+    },
+    {
+      "id": "livescore",
+      "label": "LiveScore",
+      "access": "licensed",
+      "baseTrust": 0.86,
+      "ttlMs": 900000,
+      "minIntervalMs": 2000,
+      "metricTrust": { "result": 0.95, "event": 0.9, "lineup": 0.84 },
+      "policy": "Licensed or manually supplied feed; automated page scraping disabled."
+    },
+    {
+      "id": "plaintext-scores",
+      "label": "Plain Text Sports",
+      "access": "manual",
+      "baseTrust": 0.66,
+      "ttlMs": 900000,
+      "minIntervalMs": 3000,
+      "metricTrust": { "result": 0.76, "event": 0.68 },
+      "policy": "Lightweight/manual adapter; football competition coverage must be verified."
+    }
+  ],
+  "tolerances": {
+    "goalsFor": 0,
+    "goalsAgainst": 0,
+    "shotsFor": 1,
+    "shotsAgainst": 1,
+    "cornersFor": 1,
+    "cornersAgainst": 1,
+    "passPct": 1.5,
+    "distance": 2,
+    "sprints": 5
+  }
+}
