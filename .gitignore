@@ -3,3 +3,10 @@
 .env*
 *.log
 /memory/
+.azusa/
+.kaptaind/
+.lwoodz/
+.uni/
+.traci/
+.orb
+.env
